@@ -76,10 +76,7 @@ const img = () => {
 gulp.task(img);
 
 /* build */
-gulp.task(
-  'build',
-  gulp.series('clean', gulp.parallel('wxml', 'js', 'json', 'wxss', 'img'))
-);
+gulp.task('build', gulp.series('clean', gulp.parallel('wxml', 'js', 'json', 'wxss', 'img')));
 
 /* watch */
 gulp.task('watch', () => {
