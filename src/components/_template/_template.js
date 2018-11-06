@@ -29,18 +29,18 @@ Component({
     onMyButtonTap() {
       this.setData({
         // 更新属性和数据的方法与更新页面数据的方法类似
-      })
+      });
     },
     // 内部方法建议以下划线开头
     _myPrivateMethod() {
       // 这里将 data.A[0].B 设为 'myPrivateData'
       this.setData({
         'A[0].B': 'myPrivateData'
-      })
+      });
     },
     _propertyChange(newVal, oldVal) {
 
     }
   }
 
-})
+});

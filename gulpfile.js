@@ -13,6 +13,7 @@ const lessFiles = [`${srcPath}/*.less`, `!${srcPath}/styles/**/*.less`, `!${srcP
 const imgFiles = [`${srcPath}/images/*.{png,jpg,gif,ico}`, `${srcPath}/images/**/*.{png,jpg,gif,ico}`];
 const jsonFiles = [`${srcPath}/*.json`, `!${srcPath}/_template/*.json`];
 const jsFiles = [`${srcPath}/*.js`, `!${srcPath}/_template/*.js`];
+// const npmFiles = [`${srcPath}/npm/*.js`];
 
 /* 清除dist目录 */
 gulp.task('clean', done => {
@@ -149,6 +150,7 @@ const auto = done => {
     .help('msg');
 
   const argv = yargs.argv;
+  console.log(argv);
   const source = argv.s;
   const typeEnum = {
     p: 'pages',
@@ -164,6 +166,7 @@ const auto = done => {
       type = typeEnum[key];
     }
   }
+  console.log(name, type);
 
   if (!hasParams) {
     done();
@@ -171,6 +174,8 @@ const auto = done => {
   }
 
   const root = path.join(__dirname, 'src', type);
+  console.log(root);
+  console.log(source);
   return gulp
     .src(path.join(root, source, '*.*'))
     .pipe(

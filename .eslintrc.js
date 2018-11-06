@@ -1,7 +1,8 @@
 module.exports = {
   extends: "standard",
   rules: {
-    semi: ['error', 'always']
+    'semi': ['error', 'always'],
+    'space-before-function-paren': ['off'],
   },
   globals: {
     getApp: false,
