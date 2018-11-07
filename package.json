@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/JerryCjr/mina-gulp/issues"
   },
-  "homepage": "https://github.com/JerryCjr/mina-gulp#readme"
+  "homepage": "https://github.com/JerryCjr/mina-gulp#readme",
+  "dependencies": {
+    "babyfs-date": "^0.1.8"
+  }
 }

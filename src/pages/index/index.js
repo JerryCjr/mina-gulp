@@ -1,8 +1,12 @@
+// eslint-disable-next-line no-unused-vars
+import regeneratorRuntime from '../../npm/runtime';
+import dateHelper from '../../npm/babyfs-data';
 // 全局app实例
 const app = getApp();
 console.log(app);
-// eslint-disable-next-line no-unused-vars
-const regeneratorRuntime = require('../../npm/runtime.js');
+console.log(dateHelper.parse('2018-09-30 02:20:32', 'yyyy-MM-dd hh:mm:ss').getTime());
+console.log(dateHelper.parse('2018-09-30 02:20:32', 'yyyy-MM-dd hh:mm:ss').getTime() === new Date(2018, 8, 30, 2, 20, 32, 123).getTime());
+
 let delay = function () {
   return new Promise((resolve, reject) => {
     setTimeout(function () {
