@@ -37,8 +37,9 @@ const js = () => {
     .src(jsFiles, {
       since: gulp.lastRun(js)
     })
-    .pipe(eslint())
+    .pipe(eslint({ fix: true }))
     .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     .pipe(gulp.dest(distPath));
 };
 gulp.task(js);
