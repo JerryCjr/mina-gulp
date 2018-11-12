@@ -1,10 +1,13 @@
+import env from './npm/wxapp-env/babyfs-wxapp-env/index.js';
+
 App({
 
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch() {
-
+    env.init('/pages/index/index');
+    this.globalData.host = env.host;
   },
 
   /**

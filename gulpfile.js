@@ -37,8 +37,10 @@ const js = () => {
     .src(jsFiles, {
       since: gulp.lastRun(js)
     })
-    .pipe(eslint())
+    // .pipe(eslint())
+    .pipe(eslint({ fix: true }))
     .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     .pipe(gulp.dest(distPath));
 };
 gulp.task(js);
@@ -150,7 +152,6 @@ const auto = done => {
     .help('msg');
 
   const argv = yargs.argv;
-  console.log(argv);
   const source = argv.s;
   const typeEnum = {
     p: 'pages',
@@ -166,7 +167,6 @@ const auto = done => {
       type = typeEnum[key];
     }
   }
-  console.log(name, type);
 
   if (!hasParams) {
     done();
@@ -174,8 +174,6 @@ const auto = done => {
   }
 
   const root = path.join(__dirname, 'src', type);
-  console.log(root);
-  console.log(source);
   return gulp
     .src(path.join(root, source, '*.*'))
     .pipe(

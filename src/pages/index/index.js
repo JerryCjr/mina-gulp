@@ -1,21 +1,7 @@
-// eslint-disable-next-line no-unused-vars
-import regeneratorRuntime from '../../npm/runtime';
-import dateHelper from '../../npm/babyfs-data';
 // 全局app实例
 const app = getApp();
 console.log(app);
-console.log(dateHelper.parse('2018-09-30 02:20:32', 'yyyy-MM-dd hh:mm:ss').getTime());
-console.log(dateHelper.parse('2018-09-30 02:20:32', 'yyyy-MM-dd hh:mm:ss').getTime() === new Date(2018, 8, 30, 2, 20, 32, 123).getTime());
 
-let delay = function () {
-  return new Promise((resolve, reject) => {
-    setTimeout(function () {
-      resolve({
-        test: 'r uuuuuuu kiding?'
-      });
-    }, 0);
-  });
-};
 Page({
 
   /**
@@ -29,29 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let test = {
-      abc: 123
-    };
-    console.log(test);
-    let c = Object.assign({
-      bbb: 123,
-      ccc: 999
-    }, test);
-    console.log(c);
-    let cc = function () {
-      return new Promise((resolve, reject) => {
-        setTimeout(function () {
-          resolve({
-            test: 'r u kiding?'
-          });
-        }, 0);
-      });
-    };
-    let bb = async function () {
-      let r = await cc();
-      console.log(r);
-    };
-    bb();
+
   },
 
   /**
@@ -64,9 +28,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  async onShow() {
-    let r = await delay();
-    console.log(r);
+  onShow() {
+
   },
 
   /**
