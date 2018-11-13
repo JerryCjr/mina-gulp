@@ -1,0 +1,63 @@
+/* pages/pro_invite_f/pro_invite_f_poster.wxss */
+button::after {
+    border: none;
+}
+
+.poster-box {
+    width: 584rpx;
+    margin: 27rpx auto 30rpx auto;
+}
+
+.pic image {
+    width: 100%;
+}
+
+.code {
+    position: absolute;
+    width: 270rpx;
+    left: 50%;
+    margin-left: -138rpx;
+    height: 270rpx;
+    top: 402rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.qrCode {
+    position: absolute;
+    top: 16rpx;
+    left: 11rpx;
+    z-index: 9999;
+}
+
+.code image{
+    width: 100%;
+    height: 100%;
+}
+
+.button{
+    width: 580rpx;
+    height: 108rpx;
+    text-align: center;
+    line-height: 108rpx;
+    color: #fff;
+    border-radius: 15rpx;
+    margin-left: 87rpx;
+    /* position: absolute;
+    bottom: -200rpx; */
+    margin-bottom: 70rpx;
+}
+
+.btn-class {
+    background: #0DCDBA;
+}
+
+.btn-class1 {
+    background: #39D7D3;
+    box-shadow: 0 13rpx 15rpx -6rpx #6FDDDD;
+    border-radius: 4rpx;
+    color: #fff;
+    height: 108rpx;
+    line-height: 108rpx;
+    text-align: center;
+}

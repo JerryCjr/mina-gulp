@@ -1,0 +1,19 @@
+<!--pages/pro_poster/pro_poster.wxml-->
+<view class='box'>
+    <!-- <view class="section section_gap">
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+            <view class="scroll-view-item_H {{postersType==0?'border':''}}" data-type='0' bindtap="clickType">
+                入门课招生图
+            </view> 
+            <view class="scroll-view-item_H {{postersType==3?'border':''}}" data-type='3' bindtap="clickType">
+                绑定海报
+            </view>
+        </scroll-view>
+    </view> -->
+    <scroll-view scroll-y style="height:1100rpx;margin-top:40rpx;">
+        <view class="scroll-view-item list" wx:for="{{items}}" wx:key>
+            <view class="individual" data-index="{{index}}" style="background-image: url({{item.img}})" bindtap="clickDetails"></view>
+            <p class='text'>{{item.name}}</p>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,61 @@
+<!--pages/pro_invite_manage/pro_invite_manage.wxml-->
+<view class='box' hidden='{{bgFlag}}'>
+    <image src='https://i.s.babyfs.cn/op/1/99644a158c6f452da7e0641dc62f134c.png' class='bg'></image>
+</view>
+<view class='box'>
+    <view class='box-header'>
+        <view class='header-search'>
+            <view class='search-input'>
+                <input placeholder='请输入微信昵称查找' placeholder-style='font-size: 26rpx; color: #999' bindinput='checkWx' ></input>
+                <image src='../../images/search.png' bindtap='searchFun'></image>
+            </view>
+        </view>
+        <view class='header-sum'>
+            <view class='header-sum-title'>总收益(元)</view>
+            <view class='header-sum-money'>敬请期待，即将开放</view>
+            <view class='header-sum-icon'>
+                <image src='https://i.s.babyfs.cn/op/1/bbfb1c28a7af4a52a24b9f67ff8cfff6.png' bindtap='explainFun'></image>
+            </view>
+        </view>
+        <view wx:if="{{id == 0}}">
+            <view class="navbar shadow">
+                <view class='navbar-item {{activeIdx == 0 ? "active" : ""}}' bindtap='navFun' data-idx='0'>
+                    <text class='check-box'>启蒙顾问</text>
+                    <text class='icon-san' wx:if="{{activeIdx == 0}}"></text>
+                </view>
+                <view class='navbar-item {{activeIdx == 1 ? "active" : ""}}' data-idx='1' bindtap='navFun'>
+                    <text>推广大使</text>
+                    <text class='icon-san' wx:if="{{activeIdx == 1}}"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+    <view class='main' wx:if="{{flag}}">
+        
+        <view class='main-header'>
+            <view class='main-header-name'>头像/昵称</view>
+            <view class='main-header-day'>{{activeIdx == 1 ? "绑定" : "招生"}}学员数</view>
+            <view class='main-header-get'>收益</view>
+        </view>
+        <scroll-view class="main" style="height: 900rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+            <view class='main-list'>
+                <view class='main-list-info' wx:for="{{list}}" wx:key>
+                    <view class='main-header-name'>
+                        <image src='{{item.photo ? item.photo : "../../images/photo.png"}}'></image>
+                        <text>{{item.wechatName == null ? '' : item.wechatName}}</text>
+                    </view>
+                    <view class='main-header-day'>{{item.stuCount}}</view>
+                    <view class='main-header-get col'>待开放</view>
+                </view>
+            </view>
+            <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class='main-pic' wx:elif="{{!flag}}">
+        <image src='../../images/unearnings.png'></image>
+        <text>暂无收益，请您继续加油</text>
+    </view>
+</view>

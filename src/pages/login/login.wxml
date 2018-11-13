@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="login bg-1">
+        <form>
+            <input type="text" class="user" placeholder='请输入手机号码' placeholder-class='ph' bindinput="checkMobile"></input>
+            <input type="password" class="pw" placeholder='请输入密码' placeholder-class='ph' bindinput="inputPassword"></input>
+            <view class="msg-err" wx-if="{{errorMsg}}">{{errorMsg}}</view>
+            <button class="btn btn-main btn-login a-login" bindtap='submit'>登 录</button>
+            <!-- <button class="btn btn-main btn-re a-login" bindtap='register'>注 册</button> -->
+        </form>
+        <view class='remind'>
+            <text class='txt mr' data-handle='0' bindtap='navTo'>忘记密码</text>
+            <text class='txt' data-handle='1' bindtap='navTo'>快速注册</text>
+            
+            <!-- <navigator url="/pages/login/register" class='txt' data-handle='1'>快速注册</navigator> -->
+        </view>
+        <!-- <navigator url="/pages/login/null" class="link goQr a-goqr">还没有宝宝玩英语账号？</navigator> -->
+    </view>
+</view>

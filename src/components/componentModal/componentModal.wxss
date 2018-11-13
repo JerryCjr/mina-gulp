@@ -1,0 +1,91 @@
+/* components/componentModal/componentModal.wxss */
+.component__Modal .component__Modal_bac {
+    background: rgba(0, 0, 0, 0.40);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.component__Modal .component__Modal_box {
+    width: 570rpx;
+    background: #FFFFFF;
+    border-radius: 24rpx;
+    position: relative;
+    padding: 85rpx 39rpx 40rpx;
+}
+
+.component__Modal_box .component__Modal_top_img {
+    position: absolute;
+    width: 148rpx;
+    height: 148rpx;
+    left: 252rpx;
+    top: -136rpx;
+}
+
+.component__Modal_box .component__Modal_close {
+    width: 26rpx;
+    height: 26rpx;
+    position: absolute;
+    right: 22rpx;
+    top: 22rpx;
+}
+
+.component__Modal_box .component__Modal_title {
+    font-family: STYuanti-SC-Bold;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    text-align: center;
+    margin-bottom: 45rpx;
+}
+
+.component__Modal_text {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.6;
+    width: 100%;
+}
+
+.component__Modal_box .component__Modal_redText {
+    font-family: Arial-BoldMT;
+    font-size: 38rpx;
+    text-align: center;
+    color: #FF7864;
+    display: inline-block;
+    line-height: 1.6;
+    margin-top: 30rpx;
+    width: 100%;
+}
+
+.component__Modal_box .component__Modal_btns {
+    margin-top: 60rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.component__Modal_box .component__Modal_btn {
+    width: 400rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    background: #55D1AF;
+    border-radius: 49rpx;
+    font-family: STYuanti-SC-Bold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+}
+
+.component__Modal_link_box .component__Modal_link_blue {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3762CA;
+    text-align: center;
+    margin-bottom: 45rpx;
+}

@@ -1,0 +1,85 @@
+<!--pages/pro_personal/pro_personal.wxml-->
+<view class='box'>
+    <view class='head bor h'>
+        <view class='input'>
+            <input class='wx_name' placeholder='请输入微信昵称' placeholder-class='placeholder-col' bindblur='checkWx'></input>
+            <image src='https://i.s.babyfs.cn/op/149/afc4624d03b142c7a3222c650b22111b.png' class='search' bindtap='searchFun'></image>
+        </view>
+        <view class='head-title' bindtap='explainFun'>招生Tips</view>
+    </view>
+
+    <view class='clear'></view>
+
+    <view class='main-head'>
+        <view class='main-head-photo'>头像</view>
+        <view class='main-head-name'>昵称</view>
+        <view class='main-head-progress'>收益进度</view>
+    </view>
+
+    <view class='main-list'>
+        <scroll-view class="main" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+            <view wx:for="{{personalList}}" wx:key>
+                <view class='main-list-info'>
+                    <view class='main-head-photo'>
+                        <image src='{{item.photo ? item.photo : "../../images/photo.png"}}'></image>
+                    </view>
+                    <view class='main-head-name'>{{item.wechatName}}</view>
+                    <view class='main-head-progress' bindtap='toggle' data-idx='{{item.id}}'>
+                        <text wx:if="{{item.process === 0}}">咨询</text>
+                        <text wx:elif="{{item.process === 1}}">上课</text>
+                        <text wx:elif="{{item.process === 2}}">购课</text>
+                        <text wx:elif="{{item.process === 3}}">报名</text>
+                        <text wx:else>未知</text>
+                        <image src="../../images/pull.png"></image>
+                    </view>
+                    
+                </view>
+                <view id="pull-box" class="{{canChange ? item.id == id ? 'open' : 'close' : ''}}">
+                    <view id="item-list">
+                        <view class='perch'></view>
+
+                        <view class='item-list-li'>
+                            <view class='li-pic'>
+                                <image src='https://i.s.babyfs.cn/op/50/8108c99f9132480bac48cf98c67e71bb.png'></image>
+                            </view>
+                            <view class='{{item.process == 3 ? "li-title col" : "li-title"}}'>报名</view>
+                            <view class='{{item.process == 3 ? "li-content col" : "li-content"}}'>招生成功</view>
+                        </view>
+
+                        <view class='item-list-li mr'>
+                            <view class='li-pic'>
+                                <image src='https://i.s.babyfs.cn/op/50/58d4e95064df4841a27b439562dc5726.png'></image>
+                            </view>
+                            <view class='{{item.process == 0 ? "li-title col" : "li-title"}}'>咨询</view>
+                            <view class='{{item.process == 0 ? "li-content col" : "li-content"}}'>预约课程</view>
+                        </view>
+
+                        <view class='item-list-li mr'>
+                            <view class='li-pic'>
+                                <image src='https://i.s.babyfs.cn/op/50/a2a06d15b2cd42e3a30712b9bf3fdeff.png'></image>
+                            </view>
+                            <view class='{{item.process == 1 ? "li-title col" : "li-title"}}'>上课</view>
+                            <view class='{{item.process == 1 ? "li-content col" : "li-content"}}'>学员上课</view>
+                        </view>
+
+                        <view class='item-list-li mr'>
+                            <view class='li-pic'>
+                                <image src='https://i.s.babyfs.cn/op/50/47a96ef7019743f3ad6580960b0974da.png'></image>
+                            </view>
+                            <view class='{{item.process == 2 ? "li-title col" : "li-title"}}'>购课</view>
+                            <view class='{{item.process == 2 ? "li-content col" : "li-content"}}'>学员购课，收获奖励</view>
+                        </view>
+                        <view class='perch'></view>
+                        <view class='line line1 '></view>
+                        <view class='line line2'></view>
+                        <view class='line line3'></view>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

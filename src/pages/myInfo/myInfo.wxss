@@ -1,0 +1,119 @@
+.myInfo {
+    padding-left: 20rpx;
+    /* overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    padding-bottom: 40rpx;
+}
+.myinfo-item {
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eee;
+}
+.txt {
+    display: inline-block;
+    width: 210rpx;
+    float: left;
+}
+.check-img {
+    float: right;
+    width: 224rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 34rpx;
+    margin-top: 17rpx;
+    background: rgb(0, 208, 255);
+    color: #fff;
+    margin-right: 30rpx;
+}
+.upload {
+    width: 224rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 34rpx;
+    display: inline-block;
+    float: right;
+    margin-top: 17rpx;
+    background: rgb(39, 218, 174);
+    color: #fff;
+}
+.sex {
+    float: right;
+    width: 500rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 34rpx;
+    color: #666;
+    margin-top: 17rpx;
+}
+.info {
+    float: right;
+    width: 500rpx;
+    height: 50rpx;
+    margin-top: 25rpx;
+}
+.picker-view {
+    width: 100%;
+    display: flex;
+    z-index:12;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 360rpx;
+}
+
+.picker-item {
+    line-height: 70rpx;
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+    text-align: center;
+}
+.txtarea {
+    float: right;
+    width: 500rpx;
+    height: 150rpx;
+    margin-top: 15rpx;
+    line-height: 40rpx;
+}
+.checkSec {
+    width: 576rpx;
+    height: 66rpx;
+    color: #fff;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    line-height: 66rpx;
+    background: #00C8A0;
+    margin-top: 20rpx;
+}
+.cityPick {
+    background-color:#F8F8F8;
+    border-radius:5px;
+    padding-left:14px;
+    padding-right:14px;
+    box-sizing:border-box;
+    text-align:center;
+    border: 1rpx solid #ccc;
+}
+.bg {
+    background: #26a2ff;
+}
+.h {
+    height: 180rpx;
+    line-height: 180rpx;
+}
+.mr {
+    margin-right: 20rpx;
+}
+.fz {
+    font-size: 36rpx;
+}
+.lh {
+    line-height: 50rpx;
+}

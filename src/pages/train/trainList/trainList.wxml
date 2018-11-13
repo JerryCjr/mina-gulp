@@ -1,0 +1,63 @@
+<!--pages/train/trainList/trainList.wxml-->
+<view class="trainList">
+    <!-- 正常 -->
+    <view class="trainList-usual" wx:if="{{isUsual}}">
+        <!-- 上部 -->
+        <view class="usual-top">
+            <view class="usual-top-t">亲爱的：</view>
+            <view class="usual-top-tbox">
+                <text class="usual-top-t">您的</text>
+                <text class="usual-top-tred">分站号是：{{dataObj.stationNumber}}</text>
+                <text class="usual-top-t">，在培训期间，宝玩培训部的老师将与您一起并肩前行！期待见证大家的每一次收获和成长！</text>
+            </view>
+        </view>
+        <!-- 课表 -->
+        <view class="usual-main">
+            <view class="usual-main-box">
+                <image class="usual-main-img" src="../../../images/train/train_calendar.png" alt=""></image>
+                <text class="usual-img-text">本期课表</text>
+                <view class="usual-main-table">
+                    <!-- 展开 -->
+                    <view class="usual-table-li" wx:for="{{dataObj.couseList}}" wx:for-item="item" wx:key="id">
+                        <view class="usual-main-day {{item.disabled ? 'disabled-class':''}}">
+                            <!-- 跳转详情页 -->
+                            <text class="usual-day-label" data-item="{{item}}" data-disabled="{{item.disabled}}" catchtap="searchEvent">{{item.entity.name}}</text>
+                            <!-- 下拉展开 -->
+                            <view class="usual-day-right" data-disabled="{{item.disabled}}" data-index="{{index}}" catchtap="unwindEvent">
+                                <text class="usual-day-time">{{item.entity.timeShow}}</text>
+                                <image class="usual-day-img" src="{{item.entity.unwindImg}}" alt=""></image>
+                            </view>
+                        </view>
+                        <view class="usual-main-lesson-box" wx:if="{{item.entity.unwind}}" data-item="{{item}}" data-disabled="{{item.entity.disabled}}" catchtap="searchEvent">
+                            <view class="usual-main-lesson" wx:for="{{item.parsed.courseItems}}" wx:for-item="ite" wx:key="">
+                                <text class="usual-lesson-label">{{ite.name}}</text>
+                                <text class="usual-lesson-time">{{ite.st}}~{{ite.et}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="usual-btns">
+            <view class="usual-btn {{isClick ? 'isBtnActive' : ''}}" catchtap="joinUsEvent">点击此处，加入宝玩</view>
+        </view>
+        <!-- 下部 -->
+        <view class="usual-btm">
+            <text class="usual-btm-desc">请保存本页面截图后，微信识别截图中的二维码进入培训答疑群~</text>
+            <view class="usual-qrcode-cover">
+                <image class="usual-btm-qrcode" src="{{dataObj.wxGroupUrl}}"></image>
+            </view>
+        </view>
+    </view>
+    <component-modal id="modal" config="{{modalConfig}}" bind:confirmEvent="confirmEvent"></component-modal>
+    <!-- 异常 -->
+    <view class="trainList-unusual" wx:if="{{isUnUsual}}">
+        <image class="unusual-qrcode" src="../../../images/train/train_default.png"></image>
+        <view class="unusual-title">新一期培训活动暂未开始，还请耐心等待！</view>
+        <view class="unusual-text">请保存本页面截图后，微信识别截图中的二维码进入培训答疑群</view>
+        <view class="usual-qrcode-cover">
+            <image class="usual-btm-qrcode" src="{{dataObj.wxGroupUrl}}"></image>
+        </view>
+    </view>
+</view>

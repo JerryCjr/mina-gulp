@@ -1,0 +1,86 @@
+/* .promember {
+    height: 1100rpx;
+    overflow-y: scroll;
+} */
+.station {
+    width: 440rpx;
+    height: 66rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    float: left;
+    margin-left: 60rpx;
+    background: #f0f0f0;
+    font-size: 32rpx;
+    border-radius: 6rpx;
+}
+.btn-search {
+    float: left;
+    margin-left: 30rpx;
+    width: 130rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    background: #f0f0f0;
+    font-size: 32rpx;
+}
+.list {
+    margin-top: 20rpx;
+}
+.item-list {
+    height: 106rpx;
+    line-height: 106rpx;
+    border-bottom: 1px solid #eee;
+}
+.item-list text {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 28rpx;
+}
+item-list-header {
+    position: relative;
+}
+.order {
+    position: absolute;
+    right: 98rpx;
+    top: 0;
+    width: 180rpx;
+    height: 98rpx;
+}
+.order image {
+    width: 23rpx;
+    height: 12rpx;
+}
+.order image:first-child {
+    position: absolute;
+    top: 38rpx;
+    right: 52rpx;
+}
+.order image:last-child {
+    position: absolute;
+    top: 57rpx;
+    right: 52rpx;
+}
+.strong text {
+    font-weight: bold;
+    font-size: 32rpx;
+}
+.bottom {
+    width: 100%;
+    height: 100rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}
+.clear {
+    clear: both;
+}
+.col1 {
+    color: rgb(247, 97, 1);
+}
+.col2 {
+    color: rgb(52, 208, 172);
+}

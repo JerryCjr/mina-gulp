@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='bind-mobile'>
+   <view class='sun'>
+      <image src='https://s0.babyfs.cn/m/static/img/sun@3x.56d4d4f.png' class='sun-img'></image>
+   </view>
+   <view class='bind-main'>
+      <image src='https://s0.babyfs.cn/m/static/img/phone@2x.8a8f66e.png' class='bind-img'></image>
+   </view>
+   <form class='oFrom'>
+      <text class='txt'>手机验证</text>
+      <input placeholder='请填写您的手机号' class='input phone' bindinput="checkMobile"></input>
+      <view class='user-code'>
+        <input placeholder='请输入验证码' class='input code' bindinput="checkCode"></input>
+        <button class='get-code' bindtap='getCode'>获取验证码</button>
+      </view>
+   </form>
+   <view class='submit' bindtap='submit'>
+      <image src='https://i.s.babyfs.cn/op/149/902ef776d324489ea42e357b76e43b44.png'></image>
+   </view>
+</view>

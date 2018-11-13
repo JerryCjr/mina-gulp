@@ -1,0 +1,19 @@
+<!--pages/knowledge/knowledgeList.wxml-->
+<view class='list'>
+    <view class='swiper-box'>
+        <image src='{{pic}}'></image>
+        <text>{{text}}</text>
+    </view>
+    <view class='swiper-list'>
+        <scroll-view class="main" style="height: 1200rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+            <view class='list-item' wx:for='{{list}}' wx:key bindtap='navTo' data-id='{{item.entity.id}}'>
+                <text class='title'>{{item.entity.title}}</text>
+                <text class='times'>{{item.entity.showTime}}</text>
+            </view>
+            <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+            </view>
+        </scroll-view>
+    </view>  
+</view>

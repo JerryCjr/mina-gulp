@@ -1,0 +1,18 @@
+<!-- <view class='bind-link'>
+  <view class='link-main'>
+    <text class='link-title'>宝玩商城二维码</text>
+    <view class='code-img'>
+        <image src='{{src}}' bindtap='previewImage'></image>
+    </view>
+    <view class='remind' bindtap='save'>
+      <text>点击图片长按保存并发送给学员</text>
+    </view>
+    <view class='bind-lose'>
+       <text>{{url}}</text>
+    </view>
+    <view class='copy'>
+       点击<text bindtap='copyFun'>“复制”</text>将文本内容复制到剪贴板，再粘贴发送给学员
+    </view>
+  </view>
+</view> -->
+<web-view src='{{webViewUrl}}'></web-view>

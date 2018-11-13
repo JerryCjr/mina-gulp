@@ -1,0 +1,94 @@
+/* pages/pro_invite_f/pro_invite_f.wxss */
+button::after {
+    border: none;
+}
+
+.pic {
+    /* position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+}
+
+.pic image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.invite-btn {
+    width: 400rpx;
+    height: 110rpx;
+    background: transparent;
+    position: absolute;
+    left: 50%;
+    top: 640rpx;
+    margin-left: -200rpx;
+}
+
+.click-btn {
+    width: 100%;
+    height: 120rpx;
+    background: transparent;
+    position: absolute;
+    top: 1020rpx;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9;
+}
+
+.mask image {
+    width: 26rpx;
+    height: 26rpx;
+    position: absolute;
+    right: 22rpx;
+    top: 22rpx;
+}
+
+.dialog {
+    width: 670rpx;
+    height: 518rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    border-radius: 24rpx;
+    text-align: center;
+}
+
+.dialog-title {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 30rpx;
+    margin-top: 70rpx;
+    margin-bottom: 50rpx;
+}
+
+.dialog button {
+    width: 400rpx;
+    height: 78rpx;
+    background: #55D1AF;
+    border-radius: 49rpx;
+    margin-bottom: 30rpx;
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 78rpx;
+}

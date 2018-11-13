@@ -1,0 +1,5 @@
+<!--pages/recruit/recruit_before.wxml-->
+<view class='box'>
+    <image src='../../images/wait.png'></image>
+    <text>新一期招募活动暂未开始，还请耐心等待！</text>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/training/training.wxml-->
+<view class='training'>
+  <view class='title'>{{content.lessonName}}</view>
+  <view class='link-box'>
+    <textarea class='link' value='{{content.content}}' fixed='true' maxlength="-1"></textarea>
+  </view>
+  <view class='click-btn'>
+    <button class='gain' bindtap='gainFun'>重新获取</button>
+    <button class='save' bindtap='saveFun'>保存</button>
+    <button class='copy' bindtap='copyFun'>复制</button>
+  </view>
+  <view class='date'>
+    <view>此集训营链接有限期为</view>
+    <view>{{starT}} - {{endT}}</view>
+    <view>请尽快安排学员学习</view>
+  </view>
+</view>

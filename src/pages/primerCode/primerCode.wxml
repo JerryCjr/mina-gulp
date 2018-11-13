@@ -1,0 +1,12 @@
+<!--pages/primerCode/primerCode.wxml-->
+<view class='box'>
+    <view class='code-box'>
+        <text class='title'>入门课小程序二维码</text>
+        <image src='{{src}}' bindtap="previewImage"></image>
+        <text class='tag'>{{num}}</text>
+        <view class='remind'>
+            <image src='https://i.s.babyfs.cn/op/1/02894efbe60d492ab6cdf0f66d083552.png'></image>
+            <text>长按二维码保存到手机，可将二维码群发给学员进行上课</text>
+        </view>
+    </view>
+</view>

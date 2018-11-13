@@ -1,0 +1,18 @@
+<!--pages/pro_salary/pro_salary.wxml-->
+<view class='section'>
+    <view class='head-list'>
+        <text class='date'>期次</text>
+        <text class='money'>实发总金额</text>
+    </view>
+    <!-- <scroll-view class="main" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+        
+        <view class='list' wx:for='{{list}}' wx:key bindtap='navTo' data-id='{{item.entity.id}}' data-name='{{item.entity.dateRangeName}}'>
+            <text class='date'>{{item.entity.dateRangeName}}</text>
+            <text class='money'>{{item.entity.amount}}元</text>
+        </view>
+        <view class="bottom" hidden="{{hideBottom}}">
+            <view>{{loadMoreData}}</view>
+            <view>{{refreshTime}}</view>
+        </view>
+    </scroll-view> -->
+</view>

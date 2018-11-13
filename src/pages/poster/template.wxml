@@ -1,0 +1,51 @@
+
+<template name="msgItem">
+    <view class='box'>
+        <view style='overflow:auto;width:680rpx;height:850rpx;'>
+             <image class = "{{posterSizeStyleBool ? 'poster-qt' :'poster-jz'}}" src="{{src}}">
+            </image>
+        </view>
+        <view class="button" bindtap="canvasToImage" wx:if="{{bolShow}}"> 生成这张海报到相册 </view> 
+        <button class="button btn-class" wx:if="{{!bolShow}}" bindtap='handleSetting' hidden='{{openSettingBtnHidden}}'>开启“保存到相册”授权</button>
+
+        <loading wx:if="{{downloadLoading}}"> 海报正在下载 </loading>
+        <canvas 
+            style="position:absolute;top:0;left:-2000rpx;z-index:1;"
+            canvas-id="firstCanvas" class = "{{posterSizeStyleBool ? 'canvasStyleS' :'canvasStyleH'}}">
+        </canvas>
+        <canvas canvas-id="qrCode" class='qrCode'></canvas>
+        
+        <view class='cutting' wx:if="{{isShow}}">
+            <text>通过缩放、移动确定裁切位置</text>
+            <view class="croper-wrapper">
+                <canvas class="cropper" 
+                        disable-scroll="true"
+                        bindtouchstart="uploadScaleStart" 
+                        bindtouchmove="uploadScaleMove" 
+                        style="width:500rpx;height:500rpx;" 
+                        canvas-id="cropper"
+                >
+                </canvas>
+            </view>
+            <button bindtap="getCropperImage" class='button'>确认裁切</button>
+            <view class='mack'></view>
+        </view>
+        
+        <view class='Congratulations'
+            wx:if="{{congratulations}}"
+            style='position: absolute;top:15%;z-index:10000'>
+            <!-- <view class='rabbit'></view> -->
+            <text class="text1">恭喜，海报已经保存到手机相册。</text>
+            <text class="example">发微信朋友圈文案示例</text>
+            <view class="change" bindtap="change">换一个</view>
+            <text class='kuang' selectable="true">{{text}}</text>
+            <button class="copy" bindtap='copy'> 复制文案去发朋友圈 </button>
+            <!-- <view class='close' bindtap="close"></view> -->
+        </view>
+        <view class='mack' wx:if="{{congratulations}}" bindtap="close"></view>
+        <view class='show-mack' wx:if="{{showMack}}"></view>
+
+        <image :src='{{url}}'></image>
+    </view>
+</template>
+<template is="msgItem" data="{{...item}}" />

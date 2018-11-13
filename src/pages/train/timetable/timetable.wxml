@@ -1,0 +1,48 @@
+<!--pages/train/timetable/timetable.wxml-->
+<view class="timetable">
+    <view class="timetable-top">
+        <image class="timetable-bac" src="../../../images/train/train_timetable.png"></image>
+        <view class="top-box">
+            <view class="top-box-l">
+                <view class="top-box-l-t size">{{itemObj.entity.chinaTime}}</view>
+                <view class="top-box-l-t">{{itemObj.entity.weekDay}}</view>
+            </view>
+            <view class="top-box-c">{{itemObj.entity.name}}</view>
+            <view class="top-box-r">
+                <image class="top-box-r-icon" src="../../../images/train/train_calendar_icon.png"></image>
+            </view>
+        </view>
+    </view>
+    <!-- 正常 -->
+    <view class="timetable-usual" wx:if="{{isHaveCourse}}">
+        <view class="timetable-center">
+            <view class="timetable-li" wx:for="{{itemObj.parsed.courseItems}}" wx:for-item="item" wx:key="">
+                <view class="timetable-li-top">
+                    <text class="li-top-label">{{item.name}}</text>
+                    <view class="li-top-btn-unusual" wx:if="{{!item.isCourse}}">等待开课</view>
+                    <view class="li-top-btn-usual" catchtap="goStudyEvent" wx:if="{{item.isCourse}}" data-item="{{item}}">进入课程</view>
+                </view>
+                <view class="timetable-li-main">
+                    <view class="li-main-top-box" wx:if="{{item.type == 0}}">
+                        <view class="li-main-top">
+                            <image class="li-main-top-img" src="../../../images/train/train_time_icon.png"></image>
+                            <text class="li-top-label">时间：{{item.st}}-{{item.et}}</text>
+                        </view>
+                        <view class="li-main-top">
+                            <image class="li-main-top-img" src="../../../images/train/train_lock.png"></image>
+                            <view class="li-top-label">密码：<text class="li-top-label-num">{{item.passwd}}</text></view>
+                        </view>
+                    </view>
+                    <view class="li-main-desc">{{item.desc}}</view>
+                </view>
+            </view>
+        </view>
+        <component-modal id="modal" config="{{modalConfig}}" bind:confirmEvent="confirmEvent"></component-modal>
+    </view>
+    <!-- 异常 -->
+    <view class="timetable-unusual" wx:if="{{isNoneCourse}}">
+        <image class="unusual-img" src="../../../images/train/train_week_icon.png"></image>
+        <view class="unusual-desc">今天没有课程哦，赶快去复习下~</view>
+        <view class="unusual-btn" catchtap="goBackEvent">复习课程</view>
+    </view>
+</view>

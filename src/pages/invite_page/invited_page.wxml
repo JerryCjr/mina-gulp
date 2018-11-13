@@ -1,0 +1,33 @@
+<!--pages/invite_page/invited_page.wxml-->
+<view class='box'>
+    <open-setting wx:if="{{modalFlag}}"></open-setting>
+    <!-- <view class='login'>
+        <navigator url="/pages/login/login">
+            <image src='../../images/back.png'></image>
+            已有账号 去登录
+        </navigator>
+    </view> -->
+    <view class='pic'>
+        <image src="{{url}}"></image>
+    </view>
+    <view class='info' style='top:{{info_top}}rpx'>
+        <view>
+            <image src='{{invite.headPortrait ? invite.headPortrait : "../../images/photo.png"}}'></image>
+        </view>
+        <view>
+            <text>{{invite.nickName}}</text>
+            <text wx:if="{{types == 1}}">邀请您一起成为“推广大使”</text>
+            <text wx:else>邀请您一起成为“启蒙顾问”</text>
+        </view>
+    </view>
+    <view class='btn' style='top:{{top}}%'>
+        <view wx:if="{{loginFlag}}">
+            <button class='pro-btn' bindtap='popupFun' data-id="1" wx:if="{{types == 1}}">注册成为推广大使</button>
+            <button class='guwen-btn' bindtap='popupFun' data-id="0" wx:else>注册成为启蒙顾问</button>
+        </view>
+        <view wx:else>
+            <button class='no-login' open-type="getUserInfo" bindgetuserinfo="linkToPersonal">下一步</button>
+        </view>
+        
+    </view>
+</view>

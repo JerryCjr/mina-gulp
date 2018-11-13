@@ -1,0 +1,71 @@
+<!--pages/personal/detail.wxml-->
+<view class='box'>
+    <view class='block'>
+        <view class='title'>
+            <text>学员基本信息</text>
+            <view class='left-line line'></view>
+            <view class='right-line line'></view>
+        </view>
+        <view class='item'>
+            <text>微信头像</text>
+            <view class='content'>
+                <image src='{{info.wechatImage}}' class='user-image'></image>
+            </view>
+        </view>
+        <view class='item'>
+            <text>微信昵称</text>
+            <text class='content'>{{info.wechatName}}</text>
+        </view>
+    </view>
+    <view class='block'>
+        <view class='title'>
+            <text>学员管理信息</text>
+            <view class='left-line line'></view>
+            <view class='right-line line'></view>
+        </view>
+        <view class='item'>
+            <text>有效期</text>
+            <text class='content'>{{info.leftDays}}天</text>
+        </view>
+        <view class='item'>
+            <text>上课数</text>
+            <text class='content'>{{info.takeCourseNum}}</text>
+        </view>
+        <view class='item'>
+            <text>是否关注服务号</text>
+            <text class='content'>{{info.subscribe?"是":"否"}}</text>
+        </view>
+        <view class='item'>
+            <text>绑定开始日期</text>
+            <text class='content'>{{info.bindTime}}</text>
+        </view>
+        <view class='item'>
+            <text>打卡图</text>
+            <text class='content col' bindtap='navTo' data-id='{{info.unionId}}'>获取</text>
+        </view>
+        <view class='item'>
+            <text>是否来自推广大使</text>
+            <text class='content' bindtap='navTo' wx:if="{{info.isBindAmb == 1}}">是</text>
+            <text class='content' bindtap='navTo' wx:else>否</text>
+        </view>
+        <view class='title' wx:if="{{orderList != ''}}">
+            <text>订单信息</text>
+            <view class='left-line line'></view>
+            <view class='right-line line'></view>
+        </view>
+        <view wx:for="{{orderList}}" wx:key>
+            <view class='item'>
+                <text>课程名称</text>
+                <text class='content over'>{{item.name}}</text>
+            </view>
+            <view class='item'>
+                <text>订单金额</text>
+                <text class='content'>{{item.money}}元</text>
+            </view>
+            <view class='item'>
+                <text>购买时间</text>
+                <text class='content'>{{item.payTime}}</text>
+            </view>
+        </view>
+    </view>
+</view>

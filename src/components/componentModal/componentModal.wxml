@@ -1,0 +1,21 @@
+<!--components/componentModal/componentModal.wxml-->
+<view class="component__Modal" wx:if="{{show}}">
+    <view class="component__Modal_bac">
+        <view class="component__Modal_box">
+            <image class="component__Modal_top_img" src="../../images/train/train_rabbit.png" wx:if="{{config.type == 'rabbit'}}"></image>
+            <image class="component__Modal_close" src="../../images/train/train_close.png" catchtap="cancelEvent"></image>
+            <view class="component__Modal_title" wx:if="{{config.title}}">{{config.title}}</view>
+            <!-- 链接部分 -->
+            <view class="component__Modal_link_box">
+                <view class="component__Modal_text" wx:if="{{config.label}}">{{config.label}}</view>
+                <view class="component__Modal_link_blue" wx:if="{{config.label}}">{{config.link}}</view>
+            </view>
+            <!-- 链接部分 -->
+            <text class="component__Modal_text">{{config.content}}</text>
+            <text class="component__Modal_redText" wx:if="{{config.redText}}">{{config.redText}}</text>
+            <view class="component__Modal_btns">
+                <view class="component__Modal_btn" data-config="{{config}}" catchtap="confirmEvent">{{config.confirmText}}</view>
+            </view>
+        </view>
+    </view>
+</view>

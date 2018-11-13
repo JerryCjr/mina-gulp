@@ -1,0 +1,36 @@
+<!--pages/recruit_group/group_active.wxml-->
+<view class="step">
+  <view class="step-title">01 加好友</view>
+  <view class="step-content">
+    <view class="step-desc">微信搜索添加招生群助手为好友</view>
+    <view class="step-handle">
+      <text>招生群助手微信号：</text>
+      <text wx-if="{{assistantStatus === 1}}" class="infomation">{{activityInfo.assistantRobotWeChat}}</text>
+      <button wx-if="{{assistantStatus === 0}}" class="gain" bindtap="gainFucn">点击获取</button>
+      <button class="copy {{assistantStatus === 1 ? 'allow' : 'reject'}}" bindtap="copyFunc" data-copy-test="{{activityInfo.assistantRobotWeChat}}">复制</button>
+    </view>
+  </view>
+</view>
+
+<view class="step">
+  <view class="step-title">02 建群</view>
+  <view class="step-content">
+    <view class="step-desc">建立微信招生群：</view>
+    <view class="step-handle">
+      <text>招生群名称建议：</text>
+      <text wx-if="{{assistantStatus === 1}}" class="infomation">{{activityInfo.chatRoomName}}</text>
+      <text wx-if="{{assistantStatus === 0}}" class="infomation">启蒙英语福利群</text>
+    </view>
+  </view>
+</view>
+
+<view class="step">
+  <view class="step-title">03 激活</view>
+  <view class="step-content">
+    <view class="step-desc">将助手拉入招生群，在群内发送一下激活码</view>
+    <view class="step-handle">
+      <text class="infomation">{{activityInfo ? activityInfo.activationCode : '请先完成步骤一“加好友”'}}</text>
+      <button class="copy {{assistantStatus === 1 ? 'allow' : 'reject'}}" bindtap="copyFunc" data-copy-test="{{activityInfo.activationCode}}">复制</button>
+    </view>
+  </view>
+</view>

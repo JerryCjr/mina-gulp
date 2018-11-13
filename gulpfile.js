@@ -9,7 +9,7 @@ const eslint = require('gulp-eslint');
 const srcPath = './src/**';
 const distPath = './dist/';
 const wxmlFiles = [`${srcPath}/*.wxml`, `!${srcPath}/_template/*.wxml`];
-const lessFiles = [`${srcPath}/*.less`, `!${srcPath}/styles/**/*.less`, `!${srcPath}/_template/*.less`];
+const lessFiles = [`${srcPath}/*.wxss`, `${srcPath}/*.less`, `!${srcPath}/styles/**/*.less`, `!${srcPath}/_template/*.less`];
 const imgFiles = [`${srcPath}/images/*.{png,jpg,gif,ico}`, `${srcPath}/images/**/*.{png,jpg,gif,ico}`];
 const jsonFiles = [`${srcPath}/*.json`, `!${srcPath}/_template/*.json`];
 const jsFiles = [`${srcPath}/*.js`, `!${srcPath}/_template/*.js`];
@@ -39,7 +39,7 @@ const js = () => {
     })
     .pipe(eslint({ fix: true }))
     .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
+    // .pipe(eslint.failAfterError())
     .pipe(gulp.dest(distPath));
 };
 gulp.task(js);

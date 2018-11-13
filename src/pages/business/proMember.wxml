@@ -1,0 +1,32 @@
+<view class='promember'>
+    <view>
+        <input class='station' placeholder='输入推广人分站号' bindinput='checkStation'></input>
+        <button class='btn-search' bindtap='searchFun'>搜索</button>
+    </view>
+    <view class='clear'></view>
+    <scroll-view class="list" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+        <view class='item-list strong item-list-header'>
+            <text wx:for='{{arrList}}' wx:key>{{item}}</text>
+            <!-- <view class='order' bindtap='orderFun'>
+                
+                <image src='https://i.s.babyfs.cn/op/149/ad3c52f991fd4581af2f3e01f2d1f9c9.png' wx:if='{{orderFlag1}}'></image>
+                <image src='https://i.s.babyfs.cn/op/149/ed5b520abf3d49b7914c7133f450abbb.png' wx:else></image>
+                <image src='https://i.s.babyfs.cn/op/149/6d84d0acf53440f1b946534e6c24db5c.png' wx:if='{{orderFlag2}}'></image>
+                <image src='https://i.s.babyfs.cn/op/149/cd0e150b6cb44b8e98561bef0404511d.png' wx:else></image>
+            </view> -->
+        </view>
+        <view class='item-list' wx:for='{{promember}}' wx:key>
+            <text>{{item.nickname}}</text>
+            <text>{{item.stationNumber}}</text>
+            <text>{{item.target}}</text>
+            <text wx:if='{{item.number < 0}}' class='col1'>未报数</text>
+            <text wx:else class='col2'>{{item.number}}</text>
+            <text wx:if='{{item.number < 0}}' class='col1'>{{item.target}}</text>
+            <text wx:else class='col1'>{{item.target - item.number}}</text>
+        </view>
+        <view class="bottom" hidden="{{hideBottom}}">
+            <view>{{loadMoreData}}</view>
+            <view>{{refreshTime}}</view>
+        </view>
+    </scroll-view>
+</view>

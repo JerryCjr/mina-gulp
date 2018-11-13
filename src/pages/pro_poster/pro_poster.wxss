@@ -1,0 +1,52 @@
+/* pages/pro_poster/pro_poster.wxss */
+.box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:#f1f2f6;
+}
+.scroll-view_H{
+    white-space: nowrap;
+}
+.scroll-view-item_H{
+    display: inline-block;
+    padding: 40rpx 20rpx 20rpx 20rpx;
+    color: #646464;
+}
+.scroll-view-item{
+    height: 200px;
+}
+.border{
+    color: #FF5066;
+}
+.list{
+    width: 336rpx;
+    height: 436rpx;
+    margin-left: 30rpx;
+    margin-bottom: 30rpx; 
+    float: left;
+    background: #fff;
+    border-radius:15rpx;
+}
+
+.individual{
+    width: 300rpx;
+    height: 300rpx;
+    margin: 20rpx 15rpx;
+    background-repeat:no-repeat;
+    background-size: 100% 170%;
+    border-radius:15rpx;
+}
+
+.text{
+    display:block;
+    width: 87%;
+    height: 120rpx;
+    color: #3C3C3C;
+    text-align: center;
+    font-size: 30rpx;
+    white-space: pre-line;
+    margin-left:15rpx;
+}

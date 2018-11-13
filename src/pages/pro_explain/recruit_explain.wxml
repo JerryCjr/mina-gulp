@@ -1,0 +1,22 @@
+<!--pages/pro_explain/recruit_explain.wxml-->
+<view class='box'>
+    <view class='headline'>招生Tips</view>
+    <view class='subtitle'>亲爱的推广大使，从招生到收益一共有以下四步，要想快速获取收益，这四步可以多多关注哦~</view>
+    <view class='title'>招生：</view>
+    <view>
+        <view>推广大使多多发布招生海报，吸引更多学员来报名哟</view>
+    </view>
+    <view class='title'>咨询：</view>
+    <view>
+        <view>这一阶段您可以提示学员与启蒙顾问联系，完成预约课程</view>
+    </view>
+    <view class='title'>上课：</view>
+    <view>
+        <view>您可以提醒学员体验免费的英语启蒙入门课</view>
+    </view>
+    <view class='title'>购课：</view>
+    <view>
+        <view>该阶段您可以鼓励学员多与启蒙顾问分享学习感受，解决课程疑惑</view>
+    </view>
+</view>
+

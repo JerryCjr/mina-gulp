@@ -1,0 +1,143 @@
+<!--pages/salary/salary.wxml-->
+<view class='section'>
+    <view class='head-list'>
+        <view>
+            <text class='ml'>期次</text>
+            <text class='ml'>{{dateRangeName}}</text>
+        </view>
+        <view>
+            <text class='ml'>账户</text>
+            <text class='ml'>{{data.bankId ? data.bankId : '无'}}</text>
+        </view>
+    </view>
+    <view wx:if='{{data.stat === 1}}'>
+        <!-- 顾问 -->
+        <view wx:if='{{id === "2"}}'>
+            <view wx:if='{{group != ""}}'>
+                <view class='line-box'>
+                    <view class='line'></view>
+                    <text class='green'>薪资进项</text>
+                </view>
+                <view class='main-list'>
+                    <view>
+                        <text class='w ml'>底薪</text>
+                        <text class='w1'>{{group.baseSalary}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>提成</text>
+                        <text class='w1'>{{group.saleCourseBonus}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>教辅类提成</text>
+                        <text class='w1'>{{group.saleAuxiliaryBonus}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>其他</text>
+                        <text class='w1'>{{group.otherBonus}}元</text>
+                    </view>
+                </view>
+                <view class='line-box'>
+                    <view class='line'></view>
+                    <text class='red'>薪资出项</text>
+                </view>
+                <view class='main-list'>
+                    <view>
+                        <text class='w ml'>其他扣款</text>
+                        <text class='w1'>{{group.otherDeduct}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>个人所得税</text>
+                        <text class='w1'>{{group.tax}}元</text>
+                    </view>
+                </view>
+            </view>
+            <view wx:elif='{{myself != ""}}'>
+                <view class='line green'>
+                    <text>薪资进项</text>
+                </view> 
+                <view class='main-list'>
+                    <view>
+                        <text class='w ml'>课程提成</text>
+                        <text class='w1'>{{myself.courseBonus}}元</text>
+                        <text>课程数{{myself.saleCourseNum*100}}</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>学员交叉</text>
+                        <text class='w1'>{{myself.studentCrossBonus}}元</text>
+                        <text>交叉数{{myself.studentCrossBonusNum*100}}</text>                    
+                    </view>
+                    <view>
+                        <text class='w ml'>小队长提成</text>
+                        <text class='w1'>{{myself.teamLeaderBonus}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>伯乐奖提成</text>
+                        <text class='w1'>{{myself.talentScoutBonus}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>其他提成</text>
+                        <text class='w1'>{{myself.otherBonus}}元</text>
+                    </view>
+                </view>
+                <view class='line red'>
+                    <text>薪资出项</text>
+                </view>
+                <view class='main-list'>
+                    <view>
+                        <text class='w ml'>线下退款总额</text>
+                        <text class='w1'>{{myself.courseDeduct}}元</text>
+                        <text>退款数量{{myself.refundCourseNum*100}}</text>                    
+                    </view>
+                    <view>
+                        <text class='w ml'>学员交叉</text>
+                        <text class='w1'>{{myself.studentCrossDeduct}}元</text>
+                        <text>交叉数{{myself.studentCrossDeductNum*100}}</text>                    
+                    </view>
+                    <view>
+                        <text class='w ml'>其他扣款</text>
+                        <text class='w1'>{{myself.otherDeduct}}元</text>
+                    </view>
+                    <view>
+                        <text class='w ml'>个人所得税</text>
+                        <text class='w1'>{{myself.tax}}元</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 大使 -->
+        <view wx:else>
+            <!-- 加项 -->
+            <view class='line-box'>
+                <view class='line'></view>
+                <text class='green'>薪资进项</text>
+            </view>
+            <view>
+                <text class='w ml'>招生提成</text>
+                <text class='w1'>{{parsed.saleCourseBonus}}元</text>
+            </view>
+            <view>
+                <text class='w ml'>伯乐奖提成</text>
+                <text class='w1'>{{parsed.talentScoutBonus}}元</text>
+            </view>
+            <!-- 减项 -->
+            <view class='line-box'>
+                <view class='line'></view>
+                <text class='red'>薪资出项</text>
+            </view>
+            <view>
+                <text class='w ml'>个人所得税</text>
+                <text class='w1'>{{parsed.tax}}元</text>
+            </view>
+        </view>
+        
+    </view>
+    <view wx:elif='{{data.stat === 0}}'>
+        <text class='remind'>因您提供的银行账户或个人信息有误，本期工资暂无法发放，请尽快提交相关材料。</text>
+    </view>
+    <view wx:elif='{{data.stat === 2}}'>
+        <text class='remind'>因您未提供银行账户信息，本期工资暂无法发放，请尽快提交相关材料。</text>
+    </view>
+    <view wx:elif='{{data.stat === 3}}'>
+        <text class='remind'>销售为零，本期无工资，加油！！！</text>
+    </view>
+</view>

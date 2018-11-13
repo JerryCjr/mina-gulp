@@ -1,0 +1,237 @@
+/* pages/train/trainList/trainList.wxss */
+/* 如果去掉全局样式page{position:fixed},此条样式请一并去掉 */
+.trainList {
+    overflow: scroll;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+/* 去掉全局样式page{position:fixed},此条样式请一并去掉 */
+/* 上部 */
+.usual-top {
+    padding: 19rpx 40rpx 0;
+}
+
+.usual-top .usual-top-tbox {
+    height: auto;
+    margin-top: 10rpx;
+    margin-bottom: 40rpx;
+}
+
+.usual-top .usual-top-t {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+}
+
+.usual-top .usual-top-tred {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #FF7864;
+}
+
+/* 课表 */
+.usual-main {
+    padding: 0 40rpx;
+}
+
+.usual-main .usual-main-box {
+    position: relative;
+}
+
+.usual-main-box .usual-main-img {
+    height: 134rpx;
+    width: 100%;
+    display: block;
+}
+
+.usual-main-box .usual-img-text {
+    height: 134rpx;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 56rpx;
+    text-align: center;
+    font-family: STYuanti-SC-Regular;
+    font-size: 34rpx;
+    color: #FFFFFF;
+}
+
+.usual-main-box .usual-main-table {
+    position: relative;
+    background: rgba(240, 242, 246, 0.60);
+    box-shadow: 0 2rpx 8rpx 0 rgba(0, 0, 0, 0.10);
+    border-radius: 0 0 44rpx 44rpx;
+    overflow: hidden;
+}
+
+.usual-main-table .usual-table-li {
+    width: 100%;
+    min-height: 108rpx;
+    background: #FFFFFF;
+    margin: 20rpx 0;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.usual-main-table .usual-table-li:last-of-type {
+    margin-bottom: 0;
+}
+
+.usual-table-li .usual-main-day {
+    display: flex;
+    justify-content: space-between;
+    line-height: 108rpx;
+}
+
+/* disabled样式 */
+.disabled-class .usual-day-label {
+    color: #DCDCDC !important;
+}
+
+.disabled-class .usual-day-time {
+    color: #EDEDED !important;
+}
+
+/* disabled样式 */
+.usual-main-day .usual-day-right {
+    display: flex;
+}
+
+.usual-main-day .usual-day-label {
+    font-family: STYuanti-SC-Bold;
+    font-size: 30rpx;
+    color: #55D1AF;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.usual-main-day .usual-day-time {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+}
+
+.usual-main-day .usual-day-img {
+    width: 16rpx;
+    height: 9rpx;
+    margin-top: 50rpx;
+    margin-left: 20rpx;
+    display: block;
+}
+
+/* ------------ */
+.usual-table-li .usual-main-lesson-box {
+    border-top: 2rpx solid #EAECF0;
+    margin-top: -6rpx;
+}
+
+.usual-main-lesson-box .usual-main-lesson {
+    font-family: STYuanti-SC-Regular;
+    font-size: 26rpx;
+    color: #888888;
+    height: 108rpx;
+    line-height: 108rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2rpx dashed #EAECF0;
+}
+
+.usual-main-lesson .usual-lesson-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.usual-main-lesson:last-of-type {
+    border-bottom: none;
+}
+
+/* 按钮 */
+.usual-btns {
+    margin: 40rpx 0;
+    display: flex;
+    justify-content: center;
+}
+
+.usual-btns .usual-btn {
+    width: 450rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    background: #EDEDED;
+    border-radius: 49rpx;
+    font-family: STYuanti-SC-Bold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    letter-spacing: 2rpx;
+    text-align: center;
+}
+
+.usual-btns .isBtnActive {
+    background: #55D1AF;
+}
+
+/* 下部 */
+.usual-btm {
+    padding: 0 40rpx;
+    margin-bottom: 40rpx;
+}
+
+.usual-btm .usual-btm-desc {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #787878;
+}
+
+.usual-qrcode-cover {
+    width: 360rpx;
+    height: 360rpx;
+    background: #FFFFFF;
+    box-shadow: 0 0 20rpx 0 rgba(85, 209, 175, 0.30);
+    padding: 10.3rpx;
+    box-sizing: border-box;
+    margin: 40rpx auto;
+}
+
+.usual-qrcode-cover .usual-btm-qrcode {
+    width: 339.4rpx;
+    height: 339.4rpx;
+    display: block;
+}
+
+/* 异常 */
+.trainList-unusual {
+    padding: 0 50rpx;
+}
+
+.trainList-unusual .unusual-qrcode {
+    width: 302rpx;
+    height: 216rpx;
+    margin: 140rpx auto 80rpx;
+    display: block;
+}
+
+.trainList-unusual .unusual-title {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+
+.trainList-unusual .unusual-text {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #787878;
+    text-align: center;
+    margin-bottom: 100rpx;
+}

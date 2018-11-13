@@ -1,0 +1,81 @@
+.bind-mobile {
+    overflow:hidden; 
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image:url('https://s0.babyfs.cn/m/static/img/bg@3x.e7c7de7.jpg');  
+    background-size: 100% 100%;
+}
+.sun {
+    position: absolute;
+    width: 208rpx;
+    height: 160rpx;
+    right: 40rpx;
+    top: 40rpx;
+}
+.sun-img {
+    width: 100%;
+    height: 100%;
+}
+.bind-main {
+    position: absolute;
+    width: 94%;
+    height: 660rpx;
+    left: 3%;
+    top: 200rpx;
+}
+.bind-img {
+    width: 100%;
+    height: 100%;
+}
+.oFrom {
+    position: absolute;
+    top: 280rpx;
+    left: 90rpx;
+}
+.txt {
+    font-size: 50rpx;
+    color: #4A4A4A;
+}
+.input {
+    background: #fff;
+    margin-top: 20rpx;
+    padding: 0 20rpx;
+    border-radius: 10rpx;
+}
+.phone {
+    height: 100rpx;
+    width: 520rpx;
+}
+.code {
+    height: 100rpx;
+    width: 260rpx;
+    float: left;
+    margin-top: 40rpx;
+}
+.get-code {
+    width: 260rpx;
+    height: 100rpx;
+    font-size: 36rpx;
+    line-height: 100rpx;
+    color: #2FCFA9;
+    background: #F0FFFC;
+    border: 1px solid #F0FFFC;
+    float: left;
+    margin-top: 40rpx;
+}
+.submit {
+    position: absolute;
+    left: 50%;
+    top: 650rpx;
+    width: 480rpx;
+    height: 108rpx;
+    margin-left: -240rpx;
+}
+.submit > image {
+    width: 100%;
+    height: 100%;
+}
+

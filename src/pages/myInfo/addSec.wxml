@@ -1,0 +1,17 @@
+<view>
+  <!-- <view class='input'>
+    <input placeholder='请输入您的小秘书微信号' class='sec-num' placeholder-class='pla-num' bindinput='checkWx'></input>
+  </view> -->
+  <view class='input'>
+    <input placeholder='请输入您的小秘书手机号' class='sec-num' placeholder-class='pla-num' bindinput='checkMobile'></input>
+  </view>
+  <view class='input'>
+    <input placeholder='请输入验证码' class='sec-num sec-code' placeholder-class='pla-num' bindinput='checkCode'></input>
+    <button class='send-code' bindtap='sendCode' disabled='{{flag}}'>{{time}}</button>
+  </view>
+  <button bindtap='submit' class='submit'>提交</button>
+  <view class='remind'>
+    <text class='remind-txt'>1. 手机验证（通过手机验证，您的该小秘书手机号将与推广人账号进行绑定，达到数据共享）</text>
+    <text class='remind-txt'>2. 验证手机之后请您用小秘书微信登录推广人中心，在手机验证页面用小秘书微信绑定该手机号</text>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+/* pages/knowledge/knowledgeList.wxss */
+.swiper-box {
+    height: 126rpx;
+    background: #fff;
+    box-shadow: 0 4rpx 24rpx 0 #F3F3F3;
+    border-radius: 0 0 40rpx 40rpx;
+    line-height: 126rpx;
+    padding-left: 80rpx;
+} 
+.swiper-box image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 40rpx;
+    position: relative;
+    top: 10rpx;
+}
+.swiper-box text {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #333333;
+    letter-spacing: 0;
+}
+
+.swiper-list {
+    padding: 0 40rpx;
+}
+
+.list-item {
+    background: #fff;
+    height: 120rpx;
+    box-shadow: 0 4rpx 24rpx 0 #F3F3F3;
+    border-radius: 8rpx;
+    margin-top: 24rpx;
+    padding: 0 45rpx;
+    line-height: 120rpx;
+}
+
+.title {
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    float: left;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.times {
+    float: right;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #999999;
+    letter-spacing: 0;
+}
+
+.bottom {
+    width: 100%;
+    height: 300rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}

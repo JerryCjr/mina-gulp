@@ -1,0 +1,38 @@
+/* components/open-setting/open-setting.wxss */
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 99;
+}
+
+.modal {
+    background: #fff;
+    width: 600rpx;
+    text-align: center;
+    margin: 400rpx auto;
+    border-radius: 10rpx;
+}
+
+.modal view {
+    padding: 0 40rpx;
+}
+
+.title {
+    line-height: 100rpx;
+    font-size: 34rpx;
+}
+
+.main {
+    font-size: 30rpx;
+    margin-bottom: 40rpx;
+}
+
+.btn {
+    background: #fff;
+    color: rgb(20, 189, 42);
+}
+

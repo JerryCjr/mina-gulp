@@ -1,0 +1,261 @@
+<!--pages/recruit/recruit.wxml-->
+<view class='recruit'>
+    <view class='mask' wx:if='{{flag}}'></view>
+    <view class='recruit-top'>
+        <!-- <view class='service'>
+            <image src='https://i.s.babyfs.cn/op/149/0a2ea0ce752c4eacb1b21bdfd99f8e56.png'></image>
+            <text>咨询客服</text>
+        </view> -->
+        <view class='need'>
+            <text>我们需要这样的您</text>
+            <image src='https://i.s.babyfs.cn/op/149/cc99a52fe7b34875a59adfda053255b9.png'></image>
+        </view>
+    </view>
+    
+    <view class='need-remind'>
+        <text class='need-remind-txt'> <text class='icon'></text>认同宝玩理念，敢于挑战自己，并愿为中国低幼宝贝英语启蒙事业作出贡献</text>
+        <text class='need-remind-txt mt20'><text class='icon'></text>有孩子、有爱心、有热情、有想法的四有宝妈</text>
+        <text class='need-remind-txt mt20'><text class='icon'></text>能够利用、整合、发现自己身边的资源去做推广</text>
+    </view>
+    <view class='content'>
+        
+        <view class='remove'>
+            <view class='import'>
+                <!-- <image src='https://i.s.babyfs.cn/op/149/3d461159ca024898a596af374e18e87e.png'></image> -->
+            <!-- 推广人和班长不可同时兼职 -->
+            </view>
+            <view>
+                <view class='info mt20'>
+                    <view class='headline'>
+                        <text class='NO'>NO.1</text>
+                        <text class='base'>您的姓名？(用于后期工资发放的核对)</text>
+                    </view>
+                    <!-- <view class='info-input mt20 pb'>
+                        <input placeholder='您的姓名？(用于后期工资发放的核对)' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86'></input>
+                        <input placeholder='您的常用手机号？（方便业务交流）' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86'></input>
+                        <input placeholder='您的微信昵称？（用于群管理，请务必正确）' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86'></input>
+                        <input placeholder='您的微信号？（用于群内培训指导）' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86'></input>
+                        <view class='box'>
+                            <button class='{{areaInfo == "选择地区" ? "mt20" : "mt20 col" }}' bindtap='cityShow'>{{areaInfo}}</button>
+                            <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>  
+                        </view>
+                    </view> -->
+                    <view class='info-input mt20 pd0'>
+                        <input placeholder='您的姓名' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86' bindinput='checkProName'></input>
+                    </view>
+                <!-- <view class='headline mt20'>
+                    <text class='base'>您的性别？</text>
+                </view>
+                <view class='info-input mt20'>
+                     <radio-group class='radio-group h44'>
+                        <label class='radio'><radio value='女'/><text>女</text></label>
+                        <label class='radio mr160'><radio value='男'/><text>男</text></label>
+                    </radio-group> 
+                </view> -->
+                </view>
+                <!-- <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.2</text>
+                        <text class='base'>您是全职妈妈还是班妈？</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <radio-group class='radio-group h44'>
+                            <label class='radio'><radio value='全职妈妈'/><text>全职妈妈</text></label>
+                            <label class='radio mr20'><radio value='班妈妈'/><text>班妈妈</text></label>
+                        </radio-group>
+                    </view>
+                </view> -->
+
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.2</text>
+                        <text class='base'>您的常用手机号?(方便业务交流)</text>
+                    </view>
+                    <view class='info-input mt20 pd0'>
+                        <input placeholder='11位数字' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86' bindinput='checkProPhone'></input>
+                    </view>
+                </view>
+
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.3</text>
+                        <text class='base'>您的微信昵称?(用于群管理，请务必正确)</text>
+                    </view>
+                    <view class='info-input mt20 pd0'>
+                        <input placeholder='请务必正确填写，否则会导致误踢群' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86' bindinput='checkProWechatn'></input>
+                    </view>
+                </view>
+
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.4</text>
+                        <text class='base'>您的微信号?(用于群内培训指导)</text>
+                    </view>
+                    <view class='info-input mt20 pd0'>
+                        <input placeholder='进入微信- 点击“我” - 头像右方有微信号' placeholder-style='color: #E6E6E6; font-size: 28rpx' class='h86' bindinput='checkProWechatm'></input>
+                    </view>
+                </view>
+            </view>
+            
+            <view wx:if="{{roleFlag}}">
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.5</text>
+                        <text class='base'>您所在的地区?</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <button class='{{areaInfo == "选择地区" ? "" : " col" }}' bindtap='cityShow'>{{areaInfo}}</button>
+                        <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>  
+                    </view>
+                </view>
+
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.6</text>
+                        <text class='base'>您每天有多少碎片时间？</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <button bindtap='listenerButtonTime'>{{time_than}}</button>
+                        <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>
+                    </view>
+                </view>
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.7</text>
+                        <text class='base'>您现在/过去从事的职业</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <button bindtap='listenerButtonWork'>{{job}}</button>
+                        <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>
+                    </view>
+                </view>
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.8</text>
+                        <text class='base'>您微信通讯录有多少好友？</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <button bindtap='listenerButtonNum'>{{friend_num}}</button>
+                        <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>
+                    </view>
+                </view>
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.9</text>
+                        <text class='base'>您是否购买过宝玩精品课且课程在有效期？</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <radio-group class='radio-group h44' bindchange="radioChange">
+                            <label class='radio'><radio value='是'/><text>是</text></label>
+                            <label class='radio mr160'><radio value='否'/><text>否</text></label>
+                        </radio-group>
+                    </view>
+                </view>
+                <view class='info mt40' wx:if='{{buyFlag === 1}}'>
+                    <view class='headline'>
+                        <text class='NO'>NO.10</text>
+                        <text class='base'>您购买课程时的手机号？</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <input placeholder='请您输入购买课程的手机号' placeholder-style='color: #E6E6E6' bindinput='checkbuyPhone'></input>
+                    </view>
+                </view>
+            </view>
+            <view wx:else>
+                <view class='info mt40'>
+                    <view class='headline'>
+                        <text class='NO'>NO.5</text>
+                        <text class='base'>您是全职妈妈还是班妈？</text>
+                    </view>
+                    <view class='info-input mt20'>
+                        <radio-group class='radio-group h44' bindchange="motherTypeChange">
+                            <label class='radio'><radio value='0'/><text>全职妈妈</text></label>
+                            <label class='radio mr20'><radio value='1'/><text>班妈妈</text></label>
+                        </radio-group>
+                    </view>
+                </view>
+            </view>
+            
+            <!-- <view class='info mt40' wx:if='{{buyFlag === 1}}'>
+                <view class='headline'>
+                    <text class='NO'>NO.8</text>
+                    <text class='base'>您目前在宝玩担任的角色</text>
+                </view>
+                <view class='info-input mt20'>
+                    <button bindtap='listenerButtonRole'>请选择角色</button>
+                    <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>
+                </view>
+            </view> -->
+            <!-- <view class='info mt40' wx:elif='{{buyFlag != ""}}'>
+                <view class='headline'>
+                    <text class='NO'>NO.7</text>
+                    <text class='base'>作为未购买精品课用户，您是否愿意缴纳1198元保证金?</text>
+                </view>
+                <view class='info-input mt20'>
+                    <radio-group class='radio-group h44'>
+                        <label class='radio'><radio value='是'/><text>是</text></label>
+                        <label class='radio mr160'><radio value='否'/><text>否</text></label>
+                    </radio-group>
+                </view>
+            </view> -->
+            <view class='big-btns'>
+                <button class='btns' bindtap='submitFun'>提交申请</button>
+            </view>
+            
+        </view>    
+    </view>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" >
+
+        <block wx:for-items="{{actionSheetItems}}" wx:key > 
+            <action-sheet-item bindtap="choiceTime" data-val='{{item}}'>{{item}}</action-sheet-item>
+        </block>
+        <!--自动隐藏action-sheet-->
+        <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+    <action-sheet hidden="{{actionWorkHidden}}" bindchange="listenerActionWork" >
+
+        <block wx:for-items="{{actionWorkItems}}" wx:key > 
+            <action-sheet-item bindtap="choiceWork" data-val='{{item}}'>{{item}}</action-sheet-item>
+        </block>
+        <!--自动隐藏action-sheet-->
+        <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+    <action-sheet hidden="{{actionRoleHidden}}" bindchange="listenerActionRole" >
+
+        <block wx:for-items="{{actionRoleItems}}" wx:key > 
+            <action-sheet-item bindtap="choiceRole" data-val='{{item}}'>{{item}}</action-sheet-item>
+        </block>
+        <!--自动隐藏action-sheet-->
+        <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+    <action-sheet hidden="{{actionNumHidden}}" bindchange="listenerActionNum" >
+        <block wx:for-items="{{actionNumItems}}" wx:key > 
+            <action-sheet-item bindtap="choiceNum" data-val='{{item}}'>{{item}}</action-sheet-item>
+        </block>
+        <!--自动隐藏action-sheet-->
+        <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+    <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+        <view style="height:20% ;width:95%;margin-top:20rpx">
+        <text bindtap="cityCancel" style="margin-left:20rpx">取消</text>
+        <text style="float: right;margin-right:20rpx" bindtap="citySure">确定</text>
+        </view> 
+        <picker-view style="width: 100%; height: 500px;" bindchange="cityChange" value="{{value}}" wx:key="">
+        <picker-view-column>
+            <view wx:for="{{provinces}}" class="picker-item" wx:key="">
+            {{item.n}}
+            </view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{citys}}" class="picker-item" wx:key="">
+            {{item.n}}
+            </view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{areas}}" class="picker-item" wx:key="">
+            {{item.n}}
+            </view>
+        </picker-view-column>
+        </picker-view>  
+    </view>
+</view>

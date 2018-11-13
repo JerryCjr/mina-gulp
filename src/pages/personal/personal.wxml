@@ -1,0 +1,82 @@
+<!--pages/personal/personal.wxml-->
+<view>
+  <view class='head bor h'>
+    <view class='input'>
+      <input class='wx_name' placeholder='请输入微信昵称' placeholder-class='col' bindblur='checkWx'></input>
+      <image src='https://i.s.babyfs.cn/op/149/afc4624d03b142c7a3222c650b22111b.png' class='search' bindtap='searchFun'></image>
+    </view>
+    <text class='count'>{{totalCount}}人</text>
+    <text class='past' bindtap='openFun'>过期</text>
+  </view>
+  <scroll-view class="main" style="height: 1200rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+        <view class='head-list h bor'>
+            <text class='photo'>头像</text>
+            <text class='name center'>昵称</text>
+            <view class='date'>
+                有效期
+                
+            </view>
+            <text class='time'>开始时间</text>
+            <view class='order' bindtap='orderFun'>
+                
+                    <image src='https://i.s.babyfs.cn/op/149/ad3c52f991fd4581af2f3e01f2d1f9c9.png' wx:if='{{orderFlag1}}'></image>
+                    <image src='https://i.s.babyfs.cn/op/149/ed5b520abf3d49b7914c7133f450abbb.png' wx:else></image>
+                    <image src='https://i.s.babyfs.cn/op/149/6d84d0acf53440f1b946534e6c24db5c.png' wx:if='{{orderFlag2}}'></image>
+                    <image src='https://i.s.babyfs.cn/op/149/cd0e150b6cb44b8e98561bef0404511d.png' wx:else></image>
+            </view>
+        </view>
+        <view class='main-list'>
+            <view wx:for="{{personalList}}" wx:key class='bor student-list' bindtap='studentDetailInfo' data-user-id="{{item.entity.userId}}" data-user-time="{{item.entity.bindTime}}">
+                <view wx:if="{{item.entity.isAttendClass === 1}}" class='online'>
+                    <image src="../../images/onClass.png" class='class-pic'></image>
+                </view>
+                <view wx:if="{{item.entity.hasOrder === 1}}" class='online'>
+                    <image src="../../images/order.png" class='order-pic'></image>
+                </view>
+                <view class='photo'>
+                    <image class='{{item.entity.photo ? "img show" : "img hide"}}' src='{{item.entity.photo}}'></image>
+                    <text class='{{item.entity.photo ? "def-img hide" : "def-img show"}}'>{{item.entity.wechatName ? item.entity.wechatName.slice(0, 2) : '--'}}</text>
+                </view>  
+                <text class='name center lh128'>{{item.entity.wechatName ? item.entity.wechatName : '--'}}</text>
+                 <text class='date' wx:if="{{item.entity.days === 0}}">即将过期</text>
+                <text class='date red lh128' wx:elif="{{item.entity.days <= 5}}">{{item.entity.days}}天</text> 
+                <text class='date lh128' wx:else>{{item.entity.days ? item.entity.days : ''}}天</text>
+                <text class='time time-r'>{{item.entity.bindTime}}</text>
+            </view>
+        </view>
+        <view class="bottom" hidden="{{hideBottom}}">
+            <view>{{loadMoreData}}</view>
+            <view>{{refreshTime}}</view>
+        </view>
+  </scroll-view>
+  <view class='{{flag ? "mark show" : "mark hide"}}'>
+    <view class='dialog'>
+      <view class='dialog-close' bindtap='closeFun'>
+        <image src='https://i.s.babyfs.cn/op/149/fa0a6b9e21f348b6a6a19a5b90f90aaf.png'></image>
+      </view>
+      <view class='dialog-head'>
+        <text>微信头像</text>
+        <text>微信昵称</text>
+      </view>
+      <scroll-view class="dialog-main" style="height: 772rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+      <!-- <view class='dialog-main'> -->
+        <view wx:for='{{personalPastList}}' wx:key class='item-list bor'>
+          <view wx:if='{{active}}' class='showOn' bindtap='hideAll'>
+            <text>{{item.entity.wechatName}}</text>
+          </view>
+          <view wx:else> 
+            <view class='wx_img'>
+                <image src='{{item.entity.photo}}' class='past-img'></image>
+            </view>
+            <text class='wx_n' bindtap='showAll'>{{item.entity.wechatName}}</text>
+          </view> 
+        </view>
+        <view class="bottom" hidden="{{hideBottom1}}">
+            <view>{{loadMoreData1}}</view>
+            <view>{{refreshTime1}}</view>
+        </view>
+      <!-- </view> -->
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/recruit_group/group_manage.wxml-->
+<!-- <wxs module="dateFr" src="./filters/join_hours_FR.wxs"></wxs> -->
+
+<view wx-if="{{assistantStatus === 0}}" class='no-reach'>
+  <view class="top">
+    <image src="https://i.s.babyfs.cn/op/50/058aa49ef7f04593b478b55c4d8330c3.png"></image>
+  </view>
+  <view class="step step-1">
+    <image src="https://i.s.babyfs.cn/op/50/4a5b86fbfcd14e12aaeb9e4df3cea761.png"></image>
+    <view class="hint">获得更多学员</view>
+  </view>
+  <view class="step step-2" style="margin-top: {{th}}rpx">
+    <image src="https://i.s.babyfs.cn/op/50/ef13cea43b4e49d4887d543bf628a79d.png"></image>
+    <view class="hint">无需人工维护群二维码</view>
+  </view>
+  <view class="step step-3" style="margin-top: {{th}}rpx">
+    <image src="https://i.s.babyfs.cn/op/50/3432ea0bb0664d75abb22b9aebcc105c.png"></image>
+    <view class="hint">总部助手老师帮助接待</view>
+  </view>
+  <button class="active" bindtap="activeFunc">立即激活</button>
+</view>
+
+<view wx-if="{{assistantStatus === 2}}" class="group">
+  <view class='top'>
+    <view class="top-bar">
+      <view class="assistant" bindtap="navToActive">
+        <image src="https://i.s.babyfs.cn/op/50/65d67524cf6341ab81b9759996f82027.png"></image>
+        <text>招生群助手</text>
+      </view>
+      <view class="fingerpost" bindtap="navToGuide">
+        <image src="https://i.s.babyfs.cn/op/50/c4ba8998a74f4597833233fe1d01bafb.png"></image>
+        <text>使用指南</text>
+      </view>
+    </view>
+    <view class="update-time">
+      <view class="line left-line"></view>
+      <view>更新时间：{{groupInfo.updateTime}}</view>
+      <view class="line right-line"></view>
+    </view>
+
+    <view class="group-info">
+      <image class="group-avatar" src="{{groupInfo.avatarUrl ? groupInfo.avatarUrl : 'https://i.s.babyfs.cn/op/50/4945782665b2452e9b4c92763bcb504a.png'}}"></image>
+      <view class="group-name">
+        <text>{{groupInfo.chatRoomName}}</text>
+        <text>({{groupInfo.memberCount}}人)</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="error-hint {{groupInfo.state === 2 ? 'hint-danger' : realityPeopleNum !== groupInfo.memberCount ? 'hint-warning' : ''}}" wx:if="{{groupInfo.state === 2 ? true : realityPeopleNum !== groupInfo.memberCount}}">{{groupInfo.state === 2 ? '招生群状态异常，请查阅使用指南' : realityPeopleNum !== groupInfo.memberCount ? '更多成员将陆续更新' : ''}}</view>
+
+  <view class="member-info">
+    <view class="member-list" style="{{(groupInfo.state === 2 || realityPeopleNum !== groupInfo.memberCount) ? 'margin-top: 66rpx' : ''}}">
+      <view class="member-item" wx:for="{{chatroomMembers}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+        <view class="member-avatar">
+          <image class="member-image" src="{{item.avatarUrl ? item.avatarUrl : 'https://i.s.babyfs.cn/op/50/28b7cd98212d4151b30abe0c0d8645ea.png'}}"></image>
+          <text class="member-name">{{item.nickName}}</text>
+          <text wx:if="{{item.memberType === 1}}" class="identity member-type-1">大使</text>
+          <text wx:if="{{item.memberType === 2}}" class="identity member-type-2">顾问</text>
+          <text wx:if="{{item.memberType === 3}}" class="identity member-type-3">助手</text>
+        </view>
+        <view class="jion-days">进群{{dateFr.formatDate(item.joinHours)}}</view>
+        <view class="bind-state">
+          <text wx:if="{{item.bindState === 1}}">已绑定</text>
+          <text wx:elif="{{item.bindState === 2}}">他人绑定</text>
+          <text wx:elif="{{item.bindState === 0}}" class="emphasis">未绑定</text>
+          <text wx:else>未知</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="list-end">
+      <image wx:if="{{hideBottom === 1}}" src="https://i.s.babyfs.cn/op/50/45e7d867e05d46778e1f798cf9977e57.gif"></image>
+      <view wx:if="{{hideBottom === 2}}">已经到底</view>
+    </view>
+
+  </view>
+</view>

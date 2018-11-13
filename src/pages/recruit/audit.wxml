@@ -1,0 +1,38 @@
+<view class='audit' wx:if="{{info.status==0}}">
+    <image src='https://i.s.babyfs.cn/op/149/a989cba35db340d3b43be02660ec34da.png' class='pic'></image>
+    <text class='txt'>提交成功</text>
+    <text class='remind'>
+        本批招募将于<text class='col'>{{info.applyRangeEndTime}}结束</text>，审核结果将于<text class='col'>招募结束后3个工作日</text>发布。请您微信搜索“宝宝玩英语服务号”关注获取审核结果。宝宝玩英语服务号二维码：
+    </text>
+    <view class='code'>
+        <image src="https://s0.babyfs.cn/m/static/img/qrcode_for_fwh.9d9a1c3.jpg" bindtap='previewImage'></image>
+    </view>
+</view>
+<view class='audit' wx:elif="{{info.status==4}}">
+    <image src='../../images/lose.png' class='pic'></image>
+    <text class='txt'>很抱歉，您未通过审核</text>
+    <text class='remind' wx:if="{{info.isClassicOfSystem == 1}}">
+        很遗憾，您未购买精品课程（或已失效），无法申请注册成为推广人！
+    </text>
+    <text class='remind' wx:else>
+        <!-- 很遗憾，审核失败，无法申请注册！ -->
+    </text>
+    <view class='remind-two'>
+        感谢您对宝玩的关注与支持，期待您的加入。
+    </view>
+    <button class='apply' bindtap='navTo'>重新申请</button>
+</view>
+<view class='audit' wx:elif="{{info.status==5}}">
+    <image src='https://i.s.babyfs.cn/op/149/a989cba35db340d3b43be02660ec34da.png' class='pic'></image>
+    <view class='remind-num'>
+        恭喜您，成功获取宝玩编号：<text class='col'>{{info.stationNumber}}</text>
+    </view>
+    <text class='txt'>请您进入培训，完成注册。</text>
+    <view class='remind-two'>
+        请保存本页面截图后，微信识别截图中的二维码进入培训答疑群
+    </view>
+    <view class='code'>
+        <image src="{{info.wxGroupUrl}}" bindtap='previewImage'></image>
+    </view>
+    <button class='apply top' bindtap='confirmFun'>进入培训，继续注册</button>
+</view>

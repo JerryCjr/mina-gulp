@@ -1,0 +1,77 @@
+.audit {
+    padding: 0 60rpx;
+    text-align: center;
+}
+.pic {
+    width: 180rpx;
+    height: 180rpx;
+    margin-top: 100rpx;
+}
+.txt {
+    display: block;
+    font-family: STYuanti-SC-Bold;
+    font-size: 36rpx;
+    color: #3C3C3C;
+    margin-top: 30rpx;
+}
+.remind {
+    display: block;
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    line-height: 48rpx;
+    margin-top: -20rpx;
+    text-align: left;
+}
+.code {
+    margin: 80rpx auto 0 auto;
+    width: 360rpx;
+    height: 360rpx;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(85,209,175,0.30);
+    padding: 10rpx;
+}
+.code image {
+    width: 100%;
+    height: 100%;
+}
+.remind-two {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #787878;
+    letter-spacing: 0;
+    line-height: 48rpx;
+    margin-top: 30rpx;
+    margin-left: -27rpx;
+}
+.apply {
+    width: 400rpx;
+    height: 98rpx;
+    background: #55D1AF;
+    border-radius: 49rpx;
+    font-family: STYuanti-SC-Bold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    letter-spacing: 2rpx;
+    text-align: center;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.10);
+    margin-top: 120rpx;
+}
+.apply::after {
+    border: none;
+}
+.remind-num {
+    font-family: STYuanti-SC-Regular;
+    font-size: 36rpx;
+    color: #3C3C3C;
+    letter-spacing: 2rpx;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.col {
+    color: #f60!important;
+}
+.top {
+    margin-top: 60rpx;
+    margin-bottom: 60rpx;
+}

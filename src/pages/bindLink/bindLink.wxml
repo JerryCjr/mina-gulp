@@ -1,0 +1,18 @@
+<!--pages/bindLink/bindLink.wxml-->
+<view class='bind-link'>
+  <view class='link-main'>
+    <text class='link-title'>服务号二维码</text>
+    <view class='code-img'>
+      <image src='{{codeImg}}' bindtap='previewImage'></image>
+    </view>
+    <view class='remind'>
+      <text>您的二维码将于<text class='strong'>{{bindTime}}</text>到期，届时请重新获取并生成海报，保证您成功绑定学员</text>
+    </view>
+    <view class='bind-lose'>
+       <text>{{qrCodeURL}}</text>
+    </view>
+    <view class='copy'>
+       点击<text bindtap='copyFun'>“复制”</text>将文本内容复制到剪贴板，再粘贴发送给学员
+    </view>
+  </view>
+</view>

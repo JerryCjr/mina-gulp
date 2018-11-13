@@ -1,0 +1,89 @@
+/* pages/business/teamMember.wxss */
+.search {
+    height: 83rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    padding: 0 40rpx;
+}
+
+.serach-input {
+    border: 1px solid #39DEB5;
+    border-radius: 100px;
+    width: 400rpx;
+    height: 78rpx;
+    padding: 0 50rpx;
+    float: left;
+}
+
+.btn-search {
+    width: 140rpx;
+    height: 78rpx;
+    color: #fff;
+    background: #27DAAE;
+    border: 1px solid #39DEB5;
+    border-radius: 100px;
+    line-height: 78rpx;
+    text-align: center;
+    float: right;
+}
+
+.btn-search::after {
+    border: none;
+}
+
+.list-header {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #333333;
+}
+
+.list-name {
+    display: inline-block;
+    width: 33.3333333%;
+    text-align: center;
+}
+
+.list-station {
+    display: inline-block;
+    width: 33.3333333%;
+    text-align: center;
+}
+
+.list-batch {
+    display: inline-block;
+    width: 33.3333333%;
+    text-align: center;
+}
+
+.list-content {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.bottom {
+    width: 100%;
+    height: 100rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.pad {
+    padding: 0 40rpx;
+}
+
+.m {
+    padding-top: 26rpx;
+    padding-bottom: 26rpx;
+    border-bottom: 1px solid #ECECEC;
+}

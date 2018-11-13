@@ -1,0 +1,39 @@
+.user {
+    font-size: 28rpx;
+    color: #999;
+    line-height: 100rpx;
+    border-bottom: 1px dashed #999;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.check {
+    display: inline-block;
+    color: blue;
+    text-decoration: underline;
+    margin-left: 40rpx;
+}
+.applying {
+    text-align: center;
+    margin-top: 200rpx;
+}
+.applyDesc {
+    width: 80%;
+    margin: 100rpx auto;
+    font-size: 32rpx;
+}
+.applyStatus {
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 50%;
+    font-size: 48rpx;
+    color: #fff;
+    border: none;
+    line-height: 300rpx;
+    text-align: center;
+    margin: auto;
+}
+.close {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}

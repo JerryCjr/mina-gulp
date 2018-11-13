@@ -1,0 +1,67 @@
+/* pages/personal/detail.wxss */
+.box {
+    /* position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll; */
+}
+.block {
+    color: #333333;
+}
+
+.title {
+    text-align: center;
+    font-size: 32rpx;
+    margin: 20rpx 0;
+    position: relative;
+}
+
+.item {
+    padding: 0 28rpx;
+    height: 85rpx;
+    line-height: 85rpx;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item .content {
+    min-width: 240rpx;
+}
+
+.user-image {
+    width: 80rpx;
+    height: 80rpx;
+    border: 2rpx solid #ECECEC;
+    border-radius: 50%;
+}
+
+.line {
+    width: 260rpx;
+    height: 2rpx;
+    background: #ECECEC;
+    position: absolute;
+    top: 50%;
+    margin-top: -1rpx;
+}
+
+.left-line {
+    left: 0;
+}
+
+.right-line {
+    right: 0;
+}
+
+.col {
+    color: #27DAAE;
+}
+
+.over {
+    width: 240rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

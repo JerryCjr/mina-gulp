@@ -1,0 +1,25 @@
+<!--pages/business/teamMember.wxml-->
+<view class='group'>
+    <view class='search'>
+        <input placeholder='输入推广人分站号' class='serach-input' placeholder-style='color: #27DAAE' bindinput='checkStation'></input>
+        <button class='btn-search' bindtap='searchFun'>搜索</button>
+    </view>
+    <view class='list'>
+        <view class='list-header m pad'>
+            <text class='list-name over'>昵称</text>
+            <text class='list-station over'>分站号</text>
+            <text class='list-batch over'>批次</text>
+        </view>
+        <scroll-view class="list" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+            <view class='list-content m pad' wx:for="{{list}}" wx:key wx:if="{{item.id != id}}">
+                <text class='list-name over'>{{item.nickname}}</text>
+                <text class='list-station over'>{{item.stationNumber}}</text>
+                <text class='list-batch over'>{{item.batch}}</text>
+            </view>
+            <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

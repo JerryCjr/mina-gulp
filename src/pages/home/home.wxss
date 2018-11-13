@@ -1,0 +1,225 @@
+/* pages/home/index/index.wxss */
+.box {
+    /* position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll; */
+    background: #fcfcfc;
+}
+.user {
+     /* margin-top: 70rpx;
+    margin-bottom: 70rpx;  */
+    height: 204rpx;
+    padding: 0 40rpx;
+    position: relative;
+    background: #fff;
+}
+.user-img {
+    width: 122rpx;
+    height: 122rpx;
+    border-radius: 100%;
+    float: left;
+    margin-top: 37rpx;
+}
+.no-login {
+    float: right;
+    width: 260rpx;
+    height: 80rpx;
+    margin-top: 54rpx;
+    margin-left: 40rpx;
+    background-image: linear-gradient(-45deg, #F74C68 0%, #FF6777 100%);
+    box-shadow: 0 8rpx 12rpx 0 rgba(255,89,105,0.30);
+    border-radius: 40rpx;
+    color: #fff;
+    line-height: 80rpx;
+    font-size: 32rpx;
+}
+.no-login::after {
+    border: none;
+}
+.logined {
+    float: left;
+    width: 280rpx;
+    margin-top: 30rpx;
+    margin-left: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.logined text:first-child {
+    font-size: 36rpx;
+    font-family: PingFangSC-Medium;
+    color: #333333;
+    letter-spacing: 0;
+}
+.logined text {
+    display: block;
+    line-height: 48rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666666;
+    letter-spacing: 0;
+}
+.icon-right {
+    position: absolute;
+    width: 48rpx;
+    height: 84rpx;
+    top: 78rpx;
+    right: 40rpx;
+}
+.icon-right image {
+    width: 24rpx;
+    height: 42rpx;
+}
+.user-list {
+     /* border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    height: 205rpx;  */
+    width: 100%;
+    display: flex;
+}
+.user-list:last-of-type{
+    border-bottom: 1rpx solid #eee;
+} 
+.user-list:last-of-type .list-item{
+    border-top: none; 
+}
+.list-item {
+    background: #fff;
+    width: 33.33333%;
+    border-top: 1px solid #eee;
+    height: 248rpx;
+    text-align: center;
+    color: #333;
+    font-size: 32rpx;
+    position: relative;
+}
+.txt {
+    display: block;
+    margin-top: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666666;
+    letter-spacing: 0;
+    text-align: center;
+}
+.br {
+    border-right: 1px solid #eee;
+}
+
+.user-list .list-item:nth-of-type(3) {
+    border-right: none;
+}
+
+.bb {
+    border-bottom: 1px solid #eee;
+}
+.img1 {
+    width: 96rpx;
+    height: 96rpx;
+    margin-top: 48rpx;
+}
+.img2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 58rpx;
+    height: 58rpx;
+}
+
+.flex1 {
+    width: 33.333333%;
+}
+
+.user-list-test {
+    border-top: 1px solid #eee;
+}
+
+.list-item-test {
+    display: inline-block;
+    background: #fff;
+    width: 33%;
+    height: 248rpx;
+    text-align: center;
+    color: #333;
+    font-size: 32rpx;
+    position: relative;
+    border-bottom: 1rpx solid #eee;
+}
+
+.replace-identity {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    z-index: 10;
+    padding-top: 180rpx;
+}
+
+.replace-identity .profile {
+    text-align: center;
+}
+
+.replace-identity .profile .profile-head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    border: 2rpx solid #ccc;
+}
+
+.replace-identity .profile .profile-name {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #666666;
+    margin-top: 28rpx;
+}
+
+.special-sign {
+    display: inline-block;
+    width: 98rpx;
+    height: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    background: #FFC300;
+    text-align: center;
+    color: #fff;
+    border-radius: 100rpx;
+    margin-top: 20rpx;
+}
+
+.replace-identity .hint {
+    margin-top: 60rpx;
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #333333;
+    line-height: 50rpx;
+}
+
+.replace-identity .handler {
+    text-align: center;
+    margin-top: 390rpx;
+}
+
+.replace-identity .handler button {
+    width: 590rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    border: none;
+    background: #39D7D3;
+    box-shadow: 0 8rpx 10rpx -6rpx #6FDDDD;
+    color: #fff;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+}
+
+.replace-identity .handler button::after {
+    border: none
+}

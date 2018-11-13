@@ -1,0 +1,153 @@
+<!--pages/home/index/index.wxml-->
+<view class='box'>
+    <open-setting wx:if="{{modalFlag}}"></open-setting>
+    <view class='user'>
+        <image src='https://i.s.babyfs.cn/op/149/aeba28d66851403db447e37fb0749df8.jpg' class='user-img' wx:if='{{userPhoto === "" && userName === ""}}'></image>
+        <image src='https://i.s.babyfs.cn/op/149/aeba28d66851403db447e37fb0749df8.jpg' class='user-img' wx:elif='{{userPhoto === "" && userName != ""}}' bindtap='logoutFun'></image>
+        <image src='{{userPhoto}}' class='user-img' wx:else bindtap='logoutFun'></image>
+        <view wx:if='{{userName === ""}}'> 
+             <button wx:if="{{loginFlag}}" class='no-login' open-type="getUserInfo" bindgetuserinfo="linkToPersonal">授权并登录</button>
+            <button wx:else class='no-login' bindtap='loginFun'>未登录</button> 
+             <!-- <button hidden="{{!loginFlag}}" class='no-login' open-type="getUserInfo" bindgetuserinfo="linkToPersonal">授权并登录</button>
+            <button hidden="{{loginFlag}}" class='no-login' bindtap='loginFun'>未登录</button> -->
+        </view>
+        <view wx:else class='logined' bindtap='myInfo' data-name='{{userName}}'>
+            <text>{{userName}}</text>  
+            <view wx:if="{{promoterType === 6}}" class="special-sign">精品班</view>
+            <text wx:if='{{promoterType !== 6 && promoter.leaderType != 1}}'>{{batch}} {{positionName}}</text>    
+            <text wx:if="{{promoterType !== 6}}">分站号：{{stationNumber}}</text>
+        </view>
+        <view class='icon-right' bindtap='myInfo' data-name='{{userName}}' wx:if='{{userName != ""}}'>
+            <image src='https://i.s.babyfs.cn/op/149/269d7484109c47a5a4c1a6775a74fff9.png'></image>
+        </view>
+    </view>
+    <!-- 启蒙顾问 -->
+    <view wx:if="{{flag}}">
+        <view class='user-list'>
+            <view class='list-item br' data-name='学员管理' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/da007b00153b465f9dfa44aed5d0b372.png' class='img1'></image>
+                <text class='txt'>学员管理</text>
+            </view>
+            <view class='list-item br' data-name='招生群管理' bindtap='junpRecruitGroup'>
+                <image src="{{hasValidRobot === 1 ? 'https://i.s.babyfs.cn/op/50/ba24ddda683d43238d7c68fefb5122f2.png' : 'https://i.s.babyfs.cn/op/50/0375952c6bf24384ba2a4de82fd9a2b8.png'}}" class='img1'></image>
+                <image src='../../images/new.png' class='img2' wx:if="{{hasValidRobot === 1}}"></image>
+                <text class='txt' style="color: #{{hasValidRobot === 1 ? '' : 'cacaca'}}">招生群管理</text>
+            </view>
+            <view class='list-item br' data-name='海报小程序' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/8fdf0fdfe48c4d17a9d97a1c5229d249.png' class='img1'></image>
+                <text class='txt'>海报生成器</text>
+            </view>
+        </view>
+        <view class='user-list'> 
+            <view class='list-item br' data-name='课程链接' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/6c3657abf71a4a48b47394e5131e1af6.png' class='img1'></image>
+                <text class='txt'>课程链接</text>
+            </view>
+            <view class='list-item br' data-name='入门课二维码' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/36b6a7335dac4674b31f9b5a6dfdddd4.png' class='img1'></image>
+                <text class='txt'>入门课二维码</text>
+            </view>
+            <view class='list-item' data-name='打卡图' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/f081a841c2aa468983af19729555a5bb.png' class='img1'></image>
+                <text class='txt'>学员打卡</text>
+            </view> 
+        </view>
+        <view class='user-list'>
+            <view class='list-item br' data-name='知识库' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/12ce010deb314829968d76d71c48189d.png' class='img1'></image>
+                <text class='txt'>知识库</text>
+            </view>
+            <view class='list-item br' data-name='业务报表' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/f73499238a5049e9a88dbb9123698755.png' class='img1'></image>
+                <text class='txt'>业务报表</text>
+            </view>
+            <view class='list-item' data-name='宝玩商城' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/bdb73ab7e5ae450f854bb6b08b1920f8.png' class='img1'></image>
+                <text class='txt'>宝玩商城</text>
+            </view>
+        </view>
+        <view class='user-list bb'>
+            <view class='list-item br' data-name='邀请好友' bindtap='proNavTo' data-id="0">
+                <image src='../../images/invite_friend.png' class='img1'></image>
+                <text class='txt'>邀请好友</text>
+            </view>
+            <view class='list-item br' data-name='邀请管理' bindtap='proNavTo' data-id="0">
+                <image src='../../images/invite.png' class='img1'></image>
+                <image src='../../images/new.png' class='img2'></image>
+                <text class='txt'>邀请收益</text>
+            </view>
+            <view class='list-item' data-name='绑定链接' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/b549ce4ac1e04baf8ead29ef8cdeca9c.png' class='img1'></image>
+                <text class='txt'>绑定二维码</text>
+            </view>
+        </view>
+        <view class='user-list'>
+            <view class='list-item br' data-name='工资查询' bindtap='navTo'>
+                <image src='https://i.s.babyfs.cn/op/1/cc909f48ceaa46ab93d1e70fa1168eb4.png' class='img1'></image>
+                <text class='txt'>工资查询</text>
+            </view>
+            <view class='list-item br' data-name='新人必进' bindtap='junpContactDialog' wx:if='{{ entryNewProIsShow }}'>
+                <image src='../../images/entry_contact.png' class='img1'></image>
+                <text class='txt'>新人必进</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 推广人大使 -->
+    <view wx:else>
+        <view class='user-list bb'>
+            <view class='list-item br' data-name='学员管理' bindtap='proNavTo'>
+                <image src='https://i.s.babyfs.cn/op/1/da007b00153b465f9dfa44aed5d0b372.png' class='img1'></image>
+                <text class='txt'>学员管理</text>
+            </view>
+            <view class='list-item br' data-name='工资查询' bindtap='proNavTo'>
+                <image src='https://i.s.babyfs.cn/op/1/6c3657abf71a4a48b47394e5131e1af6.png' class='img1'></image>
+                <text class='txt'>工资查询</text>
+            </view>
+            <view class='list-item' data-name='邀请管理' bindtap='proNavTo' data-id="1">
+                <image src='../../images/invite.png' class='img1'></image>
+                <image src='../../images/new.png' class='img2'></image>
+                <text class='txt'>邀请收益</text>
+            </view>
+        </view>
+        <view class='user-list bb'>
+            <view class='list-item br' data-name='邀请好友' bindtap='proNavTo' data-id='1'>
+                <image src='../../images/invite_friend.png' class='img1'></image>
+                <text class='txt'>邀请好友</text>
+            </view>
+            <view class='list-item br' data-name='收益说明' bindtap='proNavTo' wx:if="{{promoterType !== 6}}">
+                <image src='../../images/earnings.png' class='img1'></image>
+                <text class='txt'>收益说明</text>
+            </view>
+            <view class='list-item' data-name='招生海报' bindtap='proNavTo' wx:if="{{promoterType !== 6}}">
+                <image src='../../images/poster.png' class='img1'></image>
+                <text class='txt'>招生海报</text>
+            </view>
+        </view>
+        <view class='user-list'>
+            <view class='list-item br' data-name='知识库' bindtap='proNavTo' wx:if="{{promoterType !== 6}}">
+                <image src='https://i.s.babyfs.cn/op/1/12ce010deb314829968d76d71c48189d.png' class='img1'></image>
+                <text class='txt'>知识库</text>
+            </view>
+            <view class='list-item br' data-name='新人必进' bindtap='junpContactDialog' wx:if='{{ promoterType !== 6 && entryNewProIsShow }}'>
+                <image src='../../images/entry_contact.png' class='img1'></image>
+                <text class='txt'>新人必进</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view wx-if="{{replaceIdentityDialog}}" class="replace-identity">
+    <view class='profile'>
+        <image src="{{userProfile.photo || 'https://i.s.babyfs.cn/op/50/08eb2494719a477f8f9b7a3cd2ee1b7e.png'}}" class="profile-head"></image>
+        <view class="profile-name">{{userProfile.name}}</view>
+        <view class="special-sign">精品班</view>
+    </view>
+    <view class="hint">
+        <view>您即将以APP上课账号登录小程序，</view>
+        <view>原登录账户将会被退出</view>
+    </view>
+    <view class="handler">
+        <button bindtap="skipFromApp">{{skipPageName}}</button>
+    </view>
+</view>

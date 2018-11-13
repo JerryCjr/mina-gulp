@@ -1,0 +1,228 @@
+/* 弹出框 */
+.mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 9;
+}
+
+.modal {
+    width: 600rpx;
+    position: fixed;
+    top: 250rpx;
+    left: 50%;
+    margin-left: -340rpx;
+    background: #fff;
+    border-radius: 6rpx;
+    z-index: 99;
+    padding: 40rpx;
+}
+
+.item {
+    height: 44rpx;
+    margin-bottom: 46rpx;
+    position: relative;
+}
+
+.item-h {
+    height: 130rpx;
+}
+
+.remind {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #333333;
+    letter-spacing: 0;
+    float: left;
+    margin-right: 40rpx;
+}
+
+.btn-box button{
+    width: 216rpx;
+    height: 78rpx;
+    border-radius: 78rpx;
+    display: inline-block;
+    line-height: 78rpx;
+}
+
+.btn-cancel {
+    float: left;
+    background: #fff;
+    color: #00C8A0;
+    border-radius: 72rpx;
+    border: 1px solid #00C8A0;
+}
+
+.btn-save {
+    float: right;
+    background-image: linear-gradient(-45deg, #00C8A0 0%, #00C8A0 100%);
+    border-radius: 72rpx;
+    color: #fff;
+}
+
+.dimission-input {
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #333333;
+    letter-spacing: 0;
+    position: relative;
+    top: -3rpx;
+}
+/* 弹出框 */
+.secList {
+    font-size: 32rpx;
+    height: 105rpx;
+    /* line-height: 100rpx; */
+    border-bottom: 1px solid #eee;
+    padding: 0 30rpx;
+    position: relative;
+}
+/* .sec {
+    display: inline-block;
+    width: 50%;
+} */
+.sec:first-child {
+    display: inline-block;
+    width: 270rpx;
+    margin-right: 20rpx;
+}
+.sec:nth-child(2) {
+    display: inline-block;
+    width: 200rpx;
+    margin-right: 20rpx;
+}
+.sec:last-child {
+    display: inline-block;
+    width: 180rpx;
+    text-align: right;
+    position: relative;
+}
+.del {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 32rpx;
+    height: 32rpx;
+    margin-top: -16rpx;
+}
+.over {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.col {
+    color: #666;
+}
+.biglist {
+    height: 700rpx;
+    overflow-y: scroll;
+}
+.checkbtn {
+    width: 576rpx;
+    height: 66rpx;
+    color: #fff;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    line-height: 66rpx;
+    background: #00C8A0;
+    margin-top: 20rpx;
+}
+
+.sec-pic image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    position: relative;
+    top: 30rpx;
+}
+
+.sec-info {
+    font-size: 28rpx;
+    position: relative;
+}
+
+.sec-info-name {
+    width: 120rpx;
+    position: relative;
+    top: 34rpx;
+}
+
+.sec-info-mobile {
+    width: 200rpx;
+    position: relative;
+    top: 34rpx;
+}
+
+.sec-info-mark {
+    position: absolute;
+    top: 79rpx;
+    font-size: 20rpx;
+}
+
+.sec-info-mark button {
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 24rpx;
+}
+
+.sec-switch {
+    position: absolute;
+    top: 42rpx;
+    left: 30rpx;
+    height: 55rpx;
+}
+
+.wx-switch-input{
+    width: 80rpx !important;
+    height: 45rpx !important;
+}
+
+.wx-switch-input::before{
+    width: 90rpx !important;
+    height: 45rpx !important;
+    background: #ddd;
+}
+
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 40rpx !important;
+}
+
+.bg {
+    background: #26a2ff;
+}
+
+.h130 {
+    height: 130rpx;
+}
+
+.h141 {
+    height: 141rpx;
+}
+
+.fl {
+    float: left;
+}
+
+.lh100 {
+    line-height: 100rpx;
+}
+
+.lh130 {
+    line-height: 130rpx;
+}
+
+.ml20 {
+    margin-left: 20rpx;
+}
+
+.w140 {
+    width: 140rpx;
+}
+
+.flex {
+    display: flex;
+}

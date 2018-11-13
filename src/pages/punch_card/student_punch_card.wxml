@@ -1,0 +1,29 @@
+<view class='punch'>
+    <view class='punch_box'>
+        <view class='punch_count'>
+            <view>
+                <text class='punch-count-col1'>{{totalCount}}</text>
+                <text class='punch-count-col2'>打卡数</text>
+            </view>
+        </view>
+        <scroll-view class="main" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+            <view class='student' wx:for='{{list}}' wx:key>
+                <view class='student_info'>
+                    <image src='{{item.wxHead}}' class='student_img'></image>
+                    <view class='name'>
+                        <text>{{item.wxNick}}</text>
+                        <text class='col1'>{{item.uploadTime}}</text>
+                    </view>
+                </view>
+                <view class='pic'>
+                    <image src='{{item.img}}'></image>
+                </view>
+            </view>
+            <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    
+</view>

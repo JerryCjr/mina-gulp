@@ -1,0 +1,74 @@
+/* pages/primerCode/primerCode.wxss */
+.box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eaf9f7; 
+}
+
+.code-box {
+    width: 624rpx;
+    height: 796rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    margin: 150rpx auto;
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+    color: #333333;
+    letter-spacing: 0;
+    display: block;
+    padding-top: 72rpx;
+}
+
+.code-box image {
+    width: 404rpx;
+    height: 404rpx;
+    margin: 30rpx auto;
+}
+
+.remind {
+    position: absolute;
+    width: 100%;
+    height: 210rpx;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    overflow: hidden;
+}
+
+.remind image {
+    height: 100%;
+    width: 100%;
+}
+
+.remind text {
+    position: absolute;
+    top: 72rpx;
+    bottom: 0;
+    left: 34rpx;
+    right: 34rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 38rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    z-index: 9;
+}
+
+.tag {
+    position: absolute;
+    font-size: 20rpx;
+    bottom: 200rpx;
+    right: 40rpx;
+    /* border: 1px solid #A4E6DE; */
+    padding: 10rpx;
+    color: #eee;
+    border-radius: 5rpx;
+}

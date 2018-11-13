@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class='stat-page'>
+    <view class='user'>您当前的账户是：{{user_phone}} <navigator url="/pages/login/login" class='check'>切换账号</navigator></view>
+    <view wx:if="{{userInfo.apply}}" class="applying">
+			<view wx:if='{{userInfo.apply.entity.stat == 2}}' class="applyStatus" style="background-color: #d0021b">{{ userInfo.apply.entity.statDesc }}</view>
+	  		<view wx:else class="applyStatus" style="background-color:#0cb80a">{{ userInfo.apply.entity.statDesc }}</view>
+			<view class="applyDesc" wx:if='{{userInfo.apply.entity.stat == 0 || userInfo.apply.entity.stat == 1}}'>您的申请已经进入审核状态，我们会尽快处理您的请求，请耐心等待。</view>
+			<view class="applyDesc" wx:if='{{userInfo.apply.entity.stat == 2}}'><span wx:if="{{userInfo.apply.entity.extra}}">由于{{ userInfo.apply.entity.extra }}，</span>申请未通过，可重新申请</view>
+			<button class="close" wx:if='{{userInfo.apply.entity.stat == 1 || userInfo.apply.entity.stat == 0}}' bindtap="windowClose">关闭</button>
+			<button class="close" wx:elif='{{userInfo.apply.entity.stat == 2}}' bindtap="reApply">重新申请</button>
+	  </view>
+</view>

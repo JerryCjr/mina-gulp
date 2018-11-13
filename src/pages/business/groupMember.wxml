@@ -1,0 +1,91 @@
+<!--pages/business/groupMember.wxml-->
+<view class='group'>
+    <view class='search'>
+        <input placeholder='输入推广人分站号' class='serach-input' placeholder-style='color: #27DAAE' bindinput='checkStation'></input>
+        <button class='btn-search' bindtap='searchFun'>搜索</button>
+    </view>
+    <view class='list'>
+        <view class='list-header m pad'>
+            <text class='list-name over'>昵称</text>
+            <text class='list-station over'>分站号</text>
+            <text class='list-batch over'>批次</text>
+        </view>
+        <scroll-view class="list" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+            <view class='list-content m pad' wx:for="{{list}}" wx:key wx:if="{{item.id != id}}">
+                <text class='list-name over'>{{item.nickname}}</text>
+                <text class='list-station over'>{{item.stationNumber}}</text>
+                <text class='list-batch over'>{{item.batch}}</text>
+                <text class='btn-dimission' bindtap='dimissionFun' data-item='{{item}}'>{{item.stat === 0 ? '即将离职' : '离职'}}</text>
+                <text class='btn-leave' wx:if="{{item.stat !== 0}}" bindtap='leaveFun' data-item='{{item}}'>{{item.stat === 2 ? '请假中' : '请假'}}</text>
+            </view>
+            <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class='mask' wx:if='{{showFlag}}'></view>
+    <view class='modal' wx:if='{{showModal}}'>
+        <view class='item'>
+            <text class='remind'>请假人员：</text>
+            <text class='chioce'>{{modalName}}</text>
+        </view>
+        <view class='item'>
+            <text class='remind'>离职日期：</text>
+            <view class='chioce' bindtap='listenerButtonDate'> 
+                <text>{{year}}年{{month}}月{{day}}日</text>
+                <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>
+            </view>
+        </view>
+        <view class='item'>
+            <text class='remind'>离职原因：</text>
+            <view class='chioce' bindtap='listenerButtonCause'> 
+                <text>{{reasons}}</text>
+                <image src='https://i.s.babyfs.cn/op/149/5294e36ea4aa4abbb6fd7634a3458e8e.png'></image>
+            </view>
+        </view>
+        <view class='item item-h'>
+            <text class='remind'>原因说明：</text>
+            <textarea class='txt' bindinput='checkCause'></textarea>
+        </view>
+        <view class='btn-box'>
+            <button class='btn-cancel' bindtap='cancelFun'>取消</button>
+            <button class='btn-save' bindtap='saveFun'>保存</button>
+        </view>
+    </view>
+    <view class='modal' wx:if='{{showModal1}}'>
+        <view class='item'>
+            <text class='remind'>请假人员：</text>
+            <text class='chioce'>{{modalName}}</text>
+        </view>
+        <view class='item'>
+            <text class='remind'>请假期数：</text>
+            <text class='chioce'>{{range_number * 1 + 1}}期</text>
+        </view>
+        <view class='btn-box'>
+            <button class='btn-cancel' bindtap='cancelFun'>取消</button>
+            <button class='btn-save' bindtap='saveFun1'>保存</button>
+        </view>
+    </view>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" >
+
+        <block wx:for-items="{{actionSheetItems}}" wx:key > 
+            <action-sheet-item bindtap="choiceCause" data-resonse="{{item}}">{{item}}</action-sheet-item>
+        </block>
+        <!--自动隐藏action-sheet-->
+        <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 400rpx; overflow: hidden" value="{{value}}" bindchange="bindChange" class='picker-view' wx:if="{{pickerShow}}">
+        <button class='confirm' bindtap='listenerButtonDate'>确定</button>
+        <picker-view-column>
+            <view wx:for="{{years}}" style="line-height: 50px; font-size: 32rpx; " wx:key>{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{months}}" style="line-height: 50px; font-size: 32rpx;" wx:key>{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{days}}" style="line-height: 50px; font-size: 32rpx;" wx:key>{{item}}日</view>
+        </picker-view-column>
+  </picker-view>
+</view>

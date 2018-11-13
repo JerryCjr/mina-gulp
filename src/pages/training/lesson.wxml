@@ -1,0 +1,15 @@
+<!--pages/training/training.wxml-->
+<view class='training'>
+    <view class='title'>{{title}}</view>
+    <scroll-view class="main" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+        <view wx:for='{{classList}}' wx:key class='training-item'>
+            <text wx:if="{{item.entity.linkType == 0}}">(地图) {{item.entity.lessonName}}</text>
+            <text wx:else>(课节) {{item.entity.lessonName}}</text>
+            <text class='get-link' bindtap='getLink' data-id='{{item.entity.id}}' >获取</text>
+        </view>
+        <view class="bottom" hidden="{{hideBottom}}">
+            <view>{{loadMoreData}}</view>
+            <view>{{refreshTime}}</view>
+        </view>
+    </scroll-view>
+</view>

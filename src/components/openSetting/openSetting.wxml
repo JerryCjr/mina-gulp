@@ -1,0 +1,9 @@
+<!--components/open-setting/open-setting.wxml-->
+<view class='mask' wx:if="{{flag}}">
+    <view class='modal'>
+        <view class='title'>用户未授权</view>
+        <view class='main'>请点击“确定”并在授权管理中开启“用户信息”后，返回即可正常参加活动</view>
+        <!-- <button open-type='openSetting' bindopensetting="handler" class='btn'>确定</button> -->
+        <button class='btn' bindtap='handler'>确定</button>
+    </view>
+</view>

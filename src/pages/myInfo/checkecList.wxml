@@ -1,0 +1,84 @@
+<view class='checkSec'>
+    <!-- 弹出框 -->
+    <view class='mask' wx:if='{{showFlag}}'></view>
+    <view class='modal' wx:if='{{showFlag}}'>
+         <view class='item'>
+            <text class='remind'>备注:</text>
+            <input placeholder='请输入备注' placeholder-style='font-size: 28rpx;' class='dimission-input' bindinput='inputFun' value='{{remarks}}'></input>
+        </view>
+        <view class='btn-box'>
+            <button class='btn-cancel' bindtap='cancelFun'>取消</button>
+            <button class='btn-save' bindtap='saveFun'>修改</button>
+        </view>
+    </view>
+    <!-- 弹出框 -->
+    <view class='secList lh100'>
+        <!-- <text class='sec'>小秘书微信号</text>
+        <text class='sec'>小秘书手机号</text> -->
+        <text class='sec'>微信信息</text>
+        <text class='sec'>手机号</text>
+        <text class='sec'>消息通知</text>
+    </view> 
+    <view class='biglist'>
+        <view class='secList col h141 flex'>
+            <view class='sec'>
+                <view class='sec-pic fl h130'>
+                    <image src='{{photo ? photo : "../../images/photo.png"}}'></image>
+                </view>
+                <view class='sec-info fl h130 ml20 w140'>
+                    <view class='sec-info-name over'>{{promoter.wechatName ? promoter.wechatName : '空'}}</view>
+                    <view class='sec-info-mark'>推广人注册微信</view>
+                </view>
+            </view>
+            <view class='sec'>
+                <view class='sec-info fl h130'>
+                    <view class='sec-info-mobile'>{{promoter.wxMobile ? promoter.wxMobile : '空'}}</view>
+                    <view class='sec-info-mark'>
+                        <button bindtap='remarkFun' data-id='0' data-remark="{{promoter.remark ? promoter.remark : ''}}">{{remark1 ? remark1 : '备注'}}</button>
+                    </view>
+                </view>
+            </view>
+            <view class='sec h130'>
+                <switch class="sec-switch" checked="{{promoter.accountStat == 2 &&  promoter.sendStat == 0? true : false}}" bindchange="changeSwitch" data-account="{{promoter.accountStat}}" data-id='0' data-remark="{{promoter.remark}}"/>
+            </view>
+        </view>
+        <view class='secList col h141' wx:for="{{secList}}" wx:key>
+            <view class='sec'>
+                <view class='sec-pic fl h130'>
+                    <image src='{{item.entity.photo ? item.entity.photo : "../../images/photo.png"}}'></image>
+                </view>
+                <view class='sec-info fl h130 ml20 w140'>
+                    <view class='sec-info-name over'>{{item.entity.wechatName ? item.entity.wechatName : '空'}}</view>
+                    <view class='sec-info-mark'>小秘书绑定微信</view>
+                </view>
+            </view>
+            <view class='sec'>
+                <view class='sec-info fl h130'>
+                    <view class='sec-info-mobile'>{{item.entity.mobile ? item.entity.mobile : '空'}}</view>
+                    <view class='sec-info-mark'>
+                        <button bindtap='remarkFun' data-id='{{item.entity.id}}' data-remark="{{item.entity.remark ? item.entity.remark : ''}}" wx:if="{{item.entity.remark  == 'null' || item.entity.remark  == 'undefined'}}">备注</button>
+                        <button bindtap='remarkFun' data-id='{{item.entity.id}}' data-remark="{{item.entity.remark ? item.entity.remark : ''}}" wx:else>{{item.entity.remark ? item.entity.remark : '备注'}}</button>
+                    </view>
+                </view>
+            </view>
+            <view class='sec h130 flex'>
+                <view class='sec-switch'>  
+                    <switch checked="{{item.entity.accountStat == 2 &&  item.entity.stat == 0? true : false}}" bindchange="changeSwitch" data-idx='{{index}}' data-account="{{item.entity.accountStat}}" data-id='{{item.entity.id}}' data-remark="{{item.entity.remark}}" data-stat='{{item.entity.stat}}'/>
+                </view>
+                
+                <view>
+                    <image src='https://i.s.babyfs.cn/op/149/d7eceb874bbc42f7887aeb838ab28046.jpg' class='del' bindtap='delItem' data-info="{{item.entity.id}}"></image>
+                </view>
+                
+            </view>
+            <!-- <text class='sec'>{{item.entity.wxId}}</text>
+            <text class='sec'>{{item.entity.mobile}}</text> 
+            <image src='https://i.s.babyfs.cn/op/149/d7eceb874bbc42f7887aeb838ab28046.jpg' class='del' bindtap='delItem' data-info="{{item.entity.id}}"></image> -->
+        </view>
+    </view>
+    <view>
+        <button class='checkbtn' bindtap='addSec'>新增</button>
+        <!-- <button class='checkbtn bg' bindtap='navTo'>返回</button> -->
+    </view>
+  
+</view>

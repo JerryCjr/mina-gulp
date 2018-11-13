@@ -1,0 +1,28 @@
+<!--pages/invite_page/invite_page.wxml-->
+<view class='box' hidden='{{!flag}}'>
+    <view class='mask' hidden="{{dialogFlag}}">
+        <view class='dialog'>
+            <view class='dialog-title'>{{title}}</view>
+            <view class='dialog-content'>{{content}}</view>
+            <view class='dialog-btn'>
+                <button bindtap='registerFun' data-types='{{types}}'>立即注册</button>
+            </view>
+            <view class='close-btn' bindtap='closeFun'>
+                <image src='../../images/close.png'></image>
+            </view>
+        </view>
+    </view>
+    <view class='login'>
+        <navigator url="/pages/login/login">
+            <image src='../../images/back.png'></image>
+            已有账号 去登录
+        </navigator>
+    </view>
+    <view class='pic'>
+        <image src="{{url}}"></image>
+    </view>
+    <view class='btn' style='top:{{top}}%'>
+        <button class='pro-btn' bindtap='popupFun' data-id="1">了解推广大使</button>
+        <button class='guwen-btn' bindtap='popupFun' data-id="2">了解启蒙顾问</button>
+    </view>
+</view>

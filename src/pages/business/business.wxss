@@ -1,0 +1,161 @@
+/* pages/business/business.wxss */
+.business {
+    /* position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;  */
+    color: #333;
+}
+.issue {
+    height: 170rpx; 
+    border-bottom: 1px solid #eee;
+    /* border-top: 1px solid #eee; */
+    line-height: 160rpx;  
+    position: relative;
+}
+.issue text {
+    float: left;
+    color: #0dc79b;
+}
+.pull-down {
+    float: right;
+    /* position: absolute; */
+    width: 175rpx;
+    height: 68rpx;
+    border-radius: 20rpx;
+    color: #0dc79b;
+    position: relative;
+    top: 26rpx;
+     /* right: 40rpx;  */
+    border: 1px solid #fff;
+    z-index: 9;
+}
+.def {
+    line-height: 68rpx;
+    padding-left: 30rpx;
+}
+.recruit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 140rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    padding-left: 30rpx;
+    border-radius: 20rpx 20rpx 0 0;
+}
+.sale {
+    position: absolute;
+    left: 0;
+    top: 70rpx;
+    width: 140rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    padding-left: 30rpx;
+    border-radius: 0 0 20rpx 20rpx;
+}
+.icon {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right: 10rpx;
+    top: 9rpx;
+    z-index: 99;
+}
+.recruit-txt {
+    float: left;
+    font-size: 32rpx;
+}
+.recruit-txt image {
+    width: 60rpx;
+    height: 60rpx;
+    vertical-align: middle;
+    margin-right: 20rpx;
+}
+.sum {
+    float: right;
+}
+.recruit-status {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36rpx;
+}
+.table {
+    font-size: 28rpx;
+}
+.table-head text, .item-list text {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    font-size: 24rpx;
+}
+.table-head-t text, .item-list-t text {
+    display: inline-block;
+    width: 14%;
+    text-align: center;
+    line-height: 40rpx;
+    margin-top: 20rpx; 
+}
+.item-list-t text:first-child, .table-head-t text:first-child {
+    width: 16%;
+}
+ .group-box {
+    height: 83rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+} 
+.group {
+    background: #39DEB5;
+    border: 1px solid #39DEB5;
+    border-radius: 100rpx;
+    width: 392rpx;
+    height: 78rpx;
+    line-height: 78rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 36rpx;
+    float: right;
+    margin-right: 40rpx;
+}
+.group image {
+    width: 41rpx;
+    height: 34rpx;
+    margin-right: 5rpx;
+    position: relative;
+    top: 5rpx;
+}
+.col {
+    color: rgb(247, 97, 1);
+}
+.u {
+    text-decoration: underline;
+}
+.h {
+    height: 120rpx;
+    border-bottom: 1px solid #eee;
+    line-height: 116rpx;   
+}
+.h142 {
+    height: 142rpx;
+}
+.bg {
+    border: 1px solid #c1e8df; 
+    background: #E8FEF9;
+}
+.bor {
+    border: 1px solid #0dc79b;
+}
+.pad {
+    padding: 0 40rpx;
+}
+.hide {
+    display: none; 
+}
+.mr {
+    margin-right: 30rpx;
+}
+.modalremind {
+    line-height: 60rpx;
+}

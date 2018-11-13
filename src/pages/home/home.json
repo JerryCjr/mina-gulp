@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "open-setting": "/components/openSetting/openSetting"
+    }
+}

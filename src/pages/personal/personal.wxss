@@ -1,0 +1,269 @@
+/* pages/personal/personal.wxss */
+.head {
+    padding: 0 30rpx;
+}
+.input {
+    width: 375rpx;
+    height: 55rpx;
+    border: 1px solid #27daae;
+    border-radius: 30rpx;
+    position: relative;
+    margin-top: 16rpx;
+    float: left;
+}
+.search {
+    position: absolute;
+    width: 34rpx;
+    height: 34rpx;
+    right: 20rpx;
+    top: 10rpx;
+}
+.wx_name {
+    width: 290rpx;
+    height: 100%;
+    padding-left: 20rpx;
+    font-size: 32rpx;
+}
+.past {
+    float: right;
+    border: 1px solid #27daae;
+    font-size: 32rpx;
+    color: #333;
+    width: 120rpx;
+    height: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    border-radius: 24rpx;
+    margin-top: 21rpx;
+}
+.photo {
+    display: inline-block;
+    width: 100rpx;
+    text-align: center;
+    float: left;
+    margin-left: 100rpx;
+}
+.head-list {
+    line-height: 98rpx;
+    font-size: 36rpx;
+    color: #333;
+    padding: 0 30rpx;
+    position: relative;
+}
+.student-list {
+    height: 128rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666666;
+    letter-spacing: 0;
+    position: relative;
+    padding: 0 30rpx;
+}
+.order {
+    position: absolute;
+    right: 170rpx;
+    top: 0;
+    width: 200rpx;
+    height: 98rpx;
+}
+.order image {
+    width: 23rpx;
+    height: 12rpx;
+}
+.order image:first-child {
+    position: absolute;
+    top: 33rpx;
+    right: 52rpx;
+}
+.order image:last-child {
+    position: absolute;
+    top: 52rpx;
+    right: 52rpx;
+}
+.list {
+    line-height: 98rpx;
+    font-size: 32rpx;
+    color: #333;
+    padding: 0 30rpx;
+    position: relative;
+}
+.online {
+    position: absolute;
+    left: 55rpx;
+    top: 0;
+}
+.online image {
+    position: absolute;
+    width: 100rpx;
+    height: 40rpx;
+}
+.class-pic {
+    top: 20rpx;
+}
+.order-pic {
+    top: 68rpx;
+}
+.name {
+    float: left;
+    width: 150rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+.date {
+    float: left;
+    width: 128rpx;
+    text-align: center;
+    position: relative;
+}
+.time {
+    float: right;
+    width: 150rpx;
+    text-align: center;
+}
+.img {
+    width: 74rpx;
+    height: 74rpx;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 28rpx;
+    margin-left: 14rpx;
+}
+.col {
+    color: #999;
+    font-size: 32rpx;
+}
+.bor {
+    border-bottom: 1px solid #eee;
+}
+.h {
+    height: 98rpx;
+}
+.center {
+    text-align: center;
+}
+.mark {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .8);
+    z-index: 99;
+}
+.dialog {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 590rpx;
+    height: 926rpx;
+}
+.dialog-head {
+    height: 154rpx;
+    width: 590rpx;
+    background: #edfcf8;
+    border-radius: 10rpx 10rpx 0 0;
+    line-height: 154rpx;
+}
+.dialog-head text {
+    color: #333;
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-left: 90rpx;
+}
+.wx_img {
+    display: inline-block;
+    width: 150rpx;
+}
+.dialog-main {
+    /* height: 772rpx; */
+    background: #fff;
+    border-radius: 0 0 10rpx 10rpx;
+    overflow-y: scroll;
+}
+.dialog-close {
+    position: absolute;
+    right: 25rpx;
+    top: 0;
+    width: 40rpx;
+    height: 40rpx;
+}
+.dialog-close image {
+    width: 50rpx;
+    height: 50rpx;
+}
+.def-img {
+    width: 74rpx;
+    height: 74rpx;
+    line-height: 74rpx;
+    color: #fff;
+    border-radius: 100%;
+    text-align: center;
+    background-color: #f8be6a;
+    margin-top: 28rpx;
+    margin-left: 14rpx;
+}
+.past-img {
+    width: 106rpx;
+    height: 106rpx;
+    border-radius: 100%;
+    margin-left: 90rpx;
+    vertical-align: middle;
+}
+.item-list {
+    height: 142rpx;
+    line-height: 142rpx;
+}
+.wx_img {
+    width: 132rpx;
+    text-align: center;
+    margin-left: 15rpx;
+    float: left;
+}
+.wx_n {
+    float: left;
+    color: #333;
+    font-size: 36rpx;
+    margin-left: 180rpx;
+    width: 170rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.showOn {
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.red {
+    color: red;
+}
+.bottom {
+    width: 100%;
+    height: 300rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}
+.count {
+    font-size: 32rpx;
+    line-height: 100rpx;
+    margin-left: 40rpx;
+}
+.lh128 {
+    line-height: 128rpx;
+}
+.time-r {
+    position: relative;
+    top: 34rpx;
+}

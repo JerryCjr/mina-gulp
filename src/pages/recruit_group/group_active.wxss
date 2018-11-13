@@ -1,0 +1,77 @@
+/* pages/recruit_group/group_active.wxss */
+
+page {
+  padding-top: 50rpx;
+  font-family: PingFangSC-Regular;
+  background: #f7f7f7;
+}
+
+.step {
+  width: 690rpx;
+  margin: 20rpx auto;
+  padding-bottom: 70rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx -6rpx #dfdfdf;
+  position: relative;
+}
+
+.step-title {
+  margin: 0 auto;
+  width: 650rpx;
+  height: 70rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #0ac1c1;
+}
+
+.step-content {
+  margin: 30rpx auto 0 auto;
+  width: 650rpx;
+  font-size: 30rpx;
+  color: #666;
+  padding-left: 30rpx;
+  line-height: 60rpx;
+}
+
+.step-handle button::after {
+  border: none;
+}
+
+.step-handle button {
+  display: inline-block;
+  height: 42rpx;
+  border: none;
+  padding: 0;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 42rpx;
+  vertical-align: middle;
+}
+
+.gain {
+  width: 142rpx;
+  background-color: #3dd8d8;
+}
+
+.step-handle .copy {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  width: 100rpx;
+  font-size: 24rpx;
+}
+
+.step-handle .allow {
+  background-color: #3dd8d8;
+}
+
+.step-handle .reject {
+  background-color: #e6e6e6;
+}
+
+.step-handle .infomation {
+  display: inline-block;
+  color: #0ac1c1;
+  padding-right: 30rpx;
+}

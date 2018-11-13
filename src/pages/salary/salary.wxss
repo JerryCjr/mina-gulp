@@ -1,0 +1,34 @@
+/* pages/salary/salary.wxss */
+.bottom {
+    width: 100%;
+    height: 100rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}
+.head-list {
+    height: 100rpx;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.date {
+    float: left;
+    display: inline-block;
+    margin-left: 100rpx;
+    width: 320rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.money {
+    margin-left: 40rpx;
+    display: inline-block;
+}
+.list {
+    font-size: 28rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eee;
+}

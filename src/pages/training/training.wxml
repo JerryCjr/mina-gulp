@@ -1,0 +1,9 @@
+<!--pages/training/training.wxml-->
+<view class='training'>
+    <view wx:for='{{classList}}' wx:key class='training-item' data-id='{{item.trainingId}}' bindtap='navTo'>
+        {{item.courseName}}
+    </view>
+    <view class='nomore'>
+        <text>没有更多数据</text>
+    </view>
+</view>

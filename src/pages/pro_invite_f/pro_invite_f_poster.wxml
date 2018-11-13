@@ -1,0 +1,20 @@
+<!--pages/pro_invite_f/pro_invite_f_poster.wxml-->
+<view class='box'>
+    <view class='poster-box'>
+        <view class='pic'>
+            <image mode="widthFix" src='../../images/poster2.jpg'></image>
+        </view>
+        <view class='code'>
+            <image mode="widthFix" src='{{url}}'></image>
+        </view>
+    </view>
+    
+    <view class="button" wx:if="{{btnFlag}}">
+        <button bindtap='handleSetting' class='btn-class1'>开启“保存到相册”授权</button>
+    </view>
+    <view class="button btn-class" bindtap='posterFun' wx:else> 生成这张海报到相册 </view>
+    <div class="canvas">
+        <canvas canvas-id="firstCanvas" style='width:750px;height:1220px;' hidden='{{flag}}'/>
+    </div>
+</view>
+

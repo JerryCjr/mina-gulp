@@ -1,0 +1,20 @@
+/* pages/recruit/recruit_before.wxss */
+.box {
+    text-align: center;
+}
+
+.box image {
+    width: 302rpx;
+    height: 216rpx;
+    margin-top: 160rpx;
+}
+
+.box text {
+    display: block;
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    letter-spacing: 2rpx;
+    line-height: 48rpx;
+    margin-top: 80rpx;
+}

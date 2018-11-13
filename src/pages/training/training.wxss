@@ -1,0 +1,26 @@
+/* pages/training/training.wxss */
+.training {
+    padding: 0 40rpx;
+    /* overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+}
+.training-item {
+    height: 94rpx;
+    line-height: 94rpx;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 32rpx;
+    padding-left: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.nomore {
+    margin-top: 40rpx;
+    text-align: center;
+    color: #999;
+}

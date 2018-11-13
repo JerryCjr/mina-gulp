@@ -1,0 +1,22 @@
+<!--pages/pro_invite_f/pro_invite_f.wxml-->
+<view class='box'>
+    <view class='mask' hidden='{{flag}}'>
+        <view class='dialog'>
+            <image src='../../images/close.png' bindtap='closeFun'></image>
+            <view class='dialog-title'>选择您邀请宝妈成为的角色</view>
+            <!-- <button open-type='share' data-t='0' data-pt='1' data-types='2' wx:if="{{leader == 2}}">邀请启蒙顾问（小队员）</button>
+            <button open-type='share' data-t='0' data-pt='0' data-types='2'>邀请启蒙顾问</button>
+            <button open-type='share' data-t='1' data-types='1'>邀请推广大使</button> -->
+            <button bindtap='inviteCode' data-t='0' data-pt='1' data-types='2' wx:if="{{leader == 2}}">邀请启蒙顾问（小队员）</button>
+            <button bindtap='inviteCode' data-t='0' data-pt='0' data-types='2'>邀请启蒙顾问</button>
+            <button bindtap='inviteCode' data-t='1' data-types='1'>邀请推广大使</button>
+        </view>
+    </view>
+    <view class='pic'>
+        <image mode="widthFix" src="../../images/poster1.jpg"></image>
+    </view>
+    <button class='invite-btn' bindtap='inviteFun' wx:if="{{id == 0}}"></button>
+    <button class='invite-btn' wx:else data-types='1' bindtap='inviteCode'></button>
+    <button class='click-btn' bindtap='navFun'></button>
+    
+</view>

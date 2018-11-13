@@ -1,0 +1,214 @@
+/* pages/train/timetable/timetable.wxss */
+/* 如果去掉全局样式page{position:fixed},此条样式请一并去掉 */
+.timetable {
+    overflow: scroll;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+/* 去掉全局样式page{position:fixed},此条样式请一并去掉 */
+/* 顶部 */
+.timetable-top {
+    width: 100%;
+    height: 132rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.timetable-top .timetable-bac {
+    width: 100%;
+    height: 100%;
+}
+
+.timetable-top .top-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+
+.top-box .top-box-l {
+    width: 178rpx;
+    height: 100%;
+    font-family: STYuanti-SC-Regular;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    padding: 25rpx 30rpx 30rpx;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.top-box .top-box-c {
+    flex: 1;
+    font-family: STYuanti-SC-Bold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    height: 48rpx;
+    line-height: 48rpx;
+    border-left: 2rpx solid #FFFFFF;
+    border-right: 2rpx solid #FFFFFF;
+    text-align: center;
+    margin-top: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.top-box .top-box-r {
+    width: 100rpx;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-box .top-box-r .top-box-r-icon {
+    width: 40rpx;
+    height: 34rpx;
+}
+
+/* 正常 */
+/* 中间 */
+.timetable-center {
+    width: 100%;
+    padding: 60rpx 40rpx;
+    box-sizing: border-box;
+}
+
+.timetable-center .timetable-li {
+    background: #FFFFFF;
+    box-shadow: 0 2rpx 8rpx 0 rgba(0, 0, 0, 0.10);
+    border-radius: 44rpx;
+    margin-bottom: 40rpx;
+}
+
+/* ------------- */
+.timetable-li-main .li-main-top-box {
+    display: flex;
+    justify-content: space-between;
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #787878;
+    padding: 28rpx 30rpx 0;
+}
+
+.li-main-top-box .li-main-top {
+    height: 42rpx;
+    line-height: 42rpx;
+    display: flex;
+    align-items: center;
+}
+
+.li-main-top .li-main-top-img {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
+}
+
+.li-main-top .li-top-label-num {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #FF7864;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.timetable-li-main .li-main-desc {
+    font-family: STYuanti-SC-Light;
+    font-size: 28rpx;
+    color: #3C3C3C;
+    padding: 26rpx 30rpx 30rpx;
+}
+
+.timetable-li .timetable-li-top {
+    width: 100%;
+    height: 106rpx;
+    border-bottom: 2rpx solid #EAECF0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx 0 40rpx;
+    box-sizing: border-box;
+}
+
+.timetable-li-top .li-top-label {
+    font-family: STYuanti-SC-Regular;
+    font-size: 34rpx;
+    color: #55D1AF;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.timetable-li-top .li-top-btn-unusual {
+    width: 148rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    border: 2rpx solid #F2F2F2;
+    border-radius: 44rpx;
+    font-family: STYuanti-SC-Regular;
+    font-size: 26rpx;
+    color: #A0A0A0;
+    opacity: 0.8;
+}
+.timetable-li-top .li-top-btn-usual {
+    width: 148rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    border-radius: 44rpx;
+    font-family: STYuanti-SC-Regular;
+    font-size: 26rpx;
+    background: #55D1AF;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+/* ------------- */
+/* 异常 */
+.timetable-unusual {
+    padding-top: 137rpx;
+    text-align: center;
+}
+
+.timetable-unusual .unusual-img {
+    width: 177rpx;
+    height: 173rpx;
+    display: block;
+    margin: 0 auto 80rpx;
+}
+
+.timetable-unusual .unusual-desc {
+    font-family: STYuanti-SC-Regular;
+    font-size: 30rpx;
+    color: #3C3C3C;
+    margin-bottom: 100rpx;
+}
+
+.timetable-unusual .unusual-btn {
+    width: 400rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    background: #55D1AF;
+    border-radius: 49rpx;
+    font-family: STYuanti-SC-Bold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.size {
+    font-size: 24rpx;
+}

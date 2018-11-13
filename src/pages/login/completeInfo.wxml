@@ -1,0 +1,79 @@
+    <!--pages/myInfo/myInfo.wxml-->
+<view class='myInfo'>
+    <view class='user'>您当前的账户是：{{mobile}} <navigator url="/pages/login/login" class='check'>切换账号</navigator></view>
+    <view class='mt fz14'>基本信息</view>
+    <view class='myinfo-item'>
+        <view class='mt'>姓名（和分站号）:</view>
+        <input class='info mt' placeholder='请填写：姓名-分站号' placeholder-class='fz' bindinput='checkName'></input>
+    </view>
+    <view class='myinfo-item'>
+        <text class='txt mt'>购买精品课时的收货手机号:</text>
+        <input class='info mt' placeholder-class='fz' bindblur='checkMobile'></input>
+    </view>
+    <view class='myinfo-item'>
+        <text class='txt mt'>您所在的区域信息:</text>
+        <!-- <button class='sex mt' bindtap='cityShow'>{{areaInfo ? areaInfo : '请选择您所在的区域'}}</button> -->
+        <picker mode="region" bindchange="bindRegionChange" value="{{areaInfo}}" class='sex mt cityPick'>
+            <view class="picker">
+                {{areaInfo[0]}}-{{areaInfo[1]}}-{{areaInfo[2]}}
+            </view>
+        </picker>
+    </view>
+    <view class='mt fz14'>其他信息</view>
+     <view class='myinfo-item'>
+        <text class='txt mt'>如果您有推荐人，请填写推荐您做推广人的信息，格式：小秘书XXX；如（小秘书001）（最少6字）</text>
+        <input class='info mt' placeholder-class='fz' bindblur='checkPro'></input>
+    </view>
+    <view class='myinfo-item'>
+    <text class='txt mt'>您每天可用于推广人工作的时长在5小时以上吗？</text>
+    <button class='sex mt' bindtap="listenerButtonSex" wx:if="{{sex === ''}}">请点击选择“是”或“否”</button>
+    <button class='sex mt' bindtap="listenerButtonSex" wx:else>{{sex === '是' ? '是':'否'}}</button>
+    </view>
+    <view class='myinfo-item'>
+    <text class='txt mt'>您当前的工作状态:</text>
+    <button class='sex mt' bindtap="listenerButtonWork">{{work ? work : '请点击选择“全职妈妈”或“班妈”'}}</button>
+    </view>
+
+    <view>
+        <button class='checkSec' bindtap='submit'>提交成为推广人</button>
+    </view>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" >
+
+    <block wx:for-items="{{actionSheetItems}}" wx:key > 
+        <action-sheet-item bindtap="chooseSex" data-sex="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+    <action-sheet hidden="{{actionSheetHiddens}}" bindchange="listenerActionSheets" >
+
+    <block wx:for-items="{{actionWorkItems}}" wx:key>
+        <action-sheet-item bindtap="chooseWork" data-work="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+    <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <view style="height:20% ;width:95%;margin-top:10rpx">
+        <text catchtap="cityCancel">取消</text>
+        <text style="float: right" catchtap="citySure">确定</text>
+    </view> 
+    <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+        <picker-view-column>
+        <view wx:for="{{provinces}}" class="picker-item" wx:key="">
+            {{item.n}}
+        </view>
+        </picker-view-column>
+        <picker-view-column>
+        <view wx:for="{{citys}}" class="picker-item" wx:key="">
+            {{item.n}}
+        </view>
+        </picker-view-column>
+        <picker-view-column>
+        <view wx:for="{{areas}}" class="picker-item" wx:key="">
+            {{item.n}}
+        </view>
+        </picker-view-column>
+    </picker-view>  
+    </view>   
+</view>

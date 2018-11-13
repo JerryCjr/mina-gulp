@@ -1,0 +1,7 @@
+<!--pages/repository/repository.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="{{flag ? 'wxParse over' : 'wxParse'}}">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <view class='wxParse-dialog' wx:if="{{flag}}" bindtap='hideFun'></view>
+    <video src="{{src}}" objectFit="cover" controls="controls" class='wxParse-videos' wx:if="{{flag}}"></video>
+</view> 

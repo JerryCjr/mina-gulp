@@ -1,0 +1,2 @@
+<!--pages/knowledge/knowledgeWeb.wxml-->
+<web-view src='{{url}}'></web-view>

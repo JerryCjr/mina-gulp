@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="login bg-1">
+        <form>
+            <input type="text" class="user" placeholder='请输入手机号码' placeholder-class='ph' bindinput="checkMobile"></input>
+            <view>
+                <input class='code' placeholder='验证码' bindinput='checkCode'></input>
+                <button class='btn-code' bindtap='getCode' disabled='{{flag}}'>{{times}}</button>
+            </view>
+            
+            <input type="password" class="pw" placeholder='请输入密码' placeholder-class='ph' bindinput="inputPassword"></input>
+            <!-- <view class="msg-err" wx-if="{{errorMsg}}">{{errorMsg}}</view> -->
+            <button class="btn btn-main btn-re a-login" bindtap='register' wx:if='{{types === "1"}}'>注册并登录</button>
+            <button class="btn btn-main btn-re a-login" bindtap='register' wx:else>提交</button>
+        </form>
+        <!-- <view>注册即表示您同意</view> -->
+    </view>
+</view>

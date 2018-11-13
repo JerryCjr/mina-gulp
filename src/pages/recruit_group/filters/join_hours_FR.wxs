@@ -1,0 +1,22 @@
+var hours = {
+
+  formatDate: function(time) {
+    if (!time || time < 12) {
+      return '0天'
+    }
+    if (time >= 12 && time < 24) {
+      return '0.5天'
+    }
+    if (time >= 24 && time < 8760) {
+      var num = (time / 24).toFixed(0);
+      return num + '天'
+    }
+    if (time >= 8760 ) {
+      return '超过1年'
+    }
+  }
+}
+
+module.exports = {
+  formatDate: hours.formatDate
+}

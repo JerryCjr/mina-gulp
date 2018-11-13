@@ -1,0 +1,15 @@
+<!--pages/bindLink/bindLink.wxml-->
+<view class='bind-link'>
+  <view class='link-main'>
+    <text class='link-title'>新人培训群</text>
+     <view class='copy'>
+       如果您是未进群培训的新人，请点击二维码大图，长按并发送给自己，然后去识别二维码，即可加入培训群
+    </view>
+    <view class='code-img'>
+      <image src='{{codeImg}}' bindtap='previewImage'></image>
+    </view>
+    <view class='bind-lose'>
+       <text>注意：如果您之前已进入过培训群，请勿重复进入哦~</text>
+    </view>
+  </view>
+</view>

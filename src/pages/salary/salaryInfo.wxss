@@ -1,0 +1,56 @@
+.head-list view, .main-list view{
+    line-height: 80rpx;
+    font-size: 32rpx;
+}
+.main-list view {
+    font-size: 28rpx;
+}
+.ml {
+    margin-left: 110rpx;
+}
+.line-box {
+    height: 60rpx;
+    position: relative; 
+}
+.line {
+    height: 2rpx;
+    background: #eee;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx; 
+    width: 100%;
+}
+.line-box text{
+    position: absolute;
+    width: 160rpx;
+    left: 50%;
+    top: -20rpx;
+    margin-left: -90rpx;
+    background: #fff;
+    font-size: 36rpx;
+    text-align: center;
+    z-index: 9;
+}
+.w {
+    display: inline-block;
+    width: 300rpx;
+    font-size: 32rpx;
+}
+.w1 {
+    display: inline-block;
+    width: 200rpx;
+    font-size: 32rpx;
+}
+.green {
+    color: #27daae;
+}
+.red {
+    color: red;
+}
+.remind {
+    margin-top: 40rpx;
+    padding: 40rpx 60rpx;
+    display: block;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    border-top: 1px solid #eee;
+}

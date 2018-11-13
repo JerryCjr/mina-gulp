@@ -1,0 +1,107 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class='myInfo'>
+    <view class='myinfo-item'>
+        <text class='txt'>姓名:</text>
+        <input class='info mr' value='{{promoter.name ? promoter.name : ""}}' placeholder-class='fz' bindinput='checkName'></input>
+    </view>
+    <view class='myinfo-item'>
+        <text class='txt'>手机号:</text>
+        <input class='info mr' value='{{promoter.mobile ? promoter.mobile : ""}}' placeholder-class='fz' bindblur='checkMobile'></input>
+    </view>
+    <!-- <view class='myinfo-item'>
+        <text class='txt'>绑定手机号:</text>
+        <text class='info mr lh'>{{user.mobile ? user.mobile : '无'}}</text>
+    </view>
+    <view class='myinfo-item'>
+        <text class='txt'>绑定微信名:</text>
+        <text class='info mr lh'>{{user.weChatName ? user.weChatName : '无'}}</text>
+    </view> -->
+    <view class='myinfo-item' wx:if="{{flag == 'true'}}">
+        <text class='txt'>微信二维码:</text>
+        <button class='upload mr' bindtap="listenerButtonChooseImage">点击上传</button>
+        <button class='check-img' bindtap="checkImg" wx:if="{{url}}">查看</button>
+    </view>
+    <view class='myinfo-item' wx:if="{{flag == 'true' && url}}">
+        <text class='txt'>二维码状态:</text>
+        <button class='sex mr' wx:if='{{promoter.hasCheck === 0}}'>等待校验</button>
+        <button class='sex mr' wx:elif='{{promoter.hasCheck === 1}}'>校验通过</button>
+        <button class='sex mr' wx:elif='{{promoter.hasCheck === 2}}'>校验未通过</button>
+    </view>  
+    <view class='myinfo-item'>
+        <text class='txt'>性别:</text>
+        <button class='sex mr' bindtap="listenerButtonSex" wx:if="{{sex === ''}}">请选择</button>
+        <button class='sex mr' bindtap="listenerButtonSex" wx:else>{{sex === 0 ? '女':'男'}}</button>
+    </view>
+  <view class='myinfo-item'>
+    <text class='txt'>工作状态:</text>
+    <button class='sex mr' bindtap="listenerButtonWork">{{work ? work : '请选择'}}</button>
+  </view>
+  <view class='myinfo-item'>
+    <text class='txt'>工行卡号:</text>
+    <input class='info mr' value='{{promoter.bankId ? promoter.bankId : ""}}' placeholder='例：6212268888888888888' placeholder-class='fz' bindblur='checkBankId'></input>
+  </view>
+  <view class='myinfo-item'>
+    <text class='txt'>开户行:</text>
+    <input class='info mr' value='{{promoter.bankSubbranch ? promoter.bankSubbranch : ""}}' placeholder='例：北京市望京支行' placeholder-class='fz' bindblur='checkBank'></input>
+  </view>
+  <view class='myinfo-item'>
+    <text class='txt'>身份证号:</text>
+    <input class='info mr' value='{{promoter.idCard ? promoter.idCard : ""}}' placeholder-class='fz' bindblur='checkCard'></input>
+  </view>
+  <view class='myinfo-item'>
+    <text class='txt'>选择地区:</text>
+    <!-- <button class='sex mr' bindtap='cityShow'>{{areaInfo}}</button> -->
+    <picker mode="region" bindchange="bindRegionChange" value="{{areaInfo}}" class='sex mr cityPick'>
+        <view class="picker">
+            {{areaInfo[0]}}-{{areaInfo[1]}}-{{areaInfo[2]}}
+        </view>
+    </picker>
+  </view>
+  <view class='myinfo-item h'>
+    <text class='txt'>详细地址:</text>
+    <input class='txtarea mr' bindinput='checkAddress' value='{{address}}' fixed='true'></input>
+  </view>
+  <view>
+    <button class='checkSec' bindtap='navTo' wx:if='{{flag == "true"}}'>查看我的小秘书号</button>
+    <button class='checkSec bg' bindtap='submit'>提交个人信息</button>
+  </view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" >
+
+    <block wx:for-items="{{actionSheetItems}}" wx:key > 
+        <action-sheet-item bindtap="chooseSex" data-sex="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+  <action-sheet hidden="{{actionSheetHiddens}}" bindchange="listenerActionSheets" >
+
+    <block wx:for-items="{{actionWorkItems}}" wx:key>
+        <action-sheet-item bindtap="chooseWork" data-work="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+  <!-- <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <view style="height:20% ;width:95%;margin-top:10rpx">
+      <text catchtap="cityCancel">取消</text>
+      <text style="float: right" catchtap="citySure">确定</text>
+    </view> 
+    <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" class="picker-item" wx:key="">
+          {{item.n}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" class="picker-item" wx:key="">
+          {{item.n}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{areas}}" class="picker-item" wx:key="">
+          {{item.n}}
+        </view>
+      </picker-view-column>
+    </picker-view>  
+  </view>    -->
+</view>

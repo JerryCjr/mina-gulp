@@ -1,0 +1,21 @@
+/* pages/pro_salary/pro_salary.wxss */
+.head-list {
+    height: 100rpx;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.date {
+    float: left;
+    display: inline-block;
+    margin-left: 100rpx;
+    width: 320rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.money {
+    margin-left: 40rpx;
+    display: inline-block;
+}

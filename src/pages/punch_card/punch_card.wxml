@@ -1,0 +1,178 @@
+<view class='punch'>
+  <!-- 头部 -->
+  <view class='mark' wx:if="{{dialog}}">
+    <view class='resona-box'>
+      <text>不通过原因</text>
+      <textarea maxlength='100' value='{{userInput}}' bindinput='bindWordLimit' placeholder='请填写不通过原因'></textarea>
+      <view class='font-len'>{{fontLen}}/100</view>
+      <view class='dialog-btn'>
+        <button class='dialog-btn-cancel' bindtap='cancelFun'>取消</button>
+        <button class='dialog-btn-save' bindtap='saveFun'>保存</button>
+      </view>
+    </view>
+  </view>
+  <view class="navbar">
+    <view class='navbar-item {{activeIdx == 0 ? "active" : ""}}' bindtap='navFun' data-idx='0'>
+      <!-- <text class='check-box'>待审核 <text class='check-style'>{{totalCount}}</text></text> -->
+      <text class='check-box'>待审核</text>
+      <text class='icon-san' wx:if="{{activeIdx == 0}}"></text>
+    </view>
+    <view class='navbar-item {{activeIdx == 1 ? "active" : ""}}' data-idx='1' bindtap='navFun'>
+      <text>已审核</text>
+      <text class='icon-san' wx:if="{{activeIdx == 1}}"></text>
+    </view>
+    <view class='navbar-item {{activeIdx == 2 ? "active" : ""}}' data-idx='2' bindtap='navFun'>
+      <text>打卡统计</text>
+      <text class='icon-san' wx:if="{{activeIdx == 2}}"></text>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{activeIdx}}" bindchange="bindChange" style='height: 100%'>
+      <block>
+        <swiper-item>
+          <view class='selected-box' wx:if="{{audit}}">
+            <view class='selected-box-icon'>
+              <image src='{{flag ? selectPicUrl : noselectPicUrl}}' bindtap='selectedFun'></image>
+            </view>
+            <text>全选</text>
+            <text class='line'>|</text>
+            <text>已选{{count}}项</text>
+          </view>
+          <view class='punch_box'>
+            <view class='punch_box_count'>
+              <view class='punch_count'>
+                <view>
+                  <text class='punch-count-col1'>{{classNumber}}</text>
+                  <text class='punch-count-col2'>当日上课数</text>
+                </view>
+                <text class='punch-line'></text>
+                <view>
+                  <text class='punch-count-col1'>{{punchCard}}</text>
+                  <text class='punch-count-col2'>当日打卡数</text>
+                </view>
+              </view>
+            </view>
+
+            <scroll-view class="main" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+
+              <view class='student' wx:for='{{list}}' wx:key>
+                <view class='student_info' bindtap='navTo' data-id="{{item.unionId}}">
+                  <image src='{{item.wxHead}}' class='student_img' lazy-load='true'></image>
+                  <view class='name'>
+                    <text>{{item.wxNick}}</text>
+                    <text class='col1'>{{item.uploadTime}}</text>
+                  </view>
+                </view>
+                <view class='pic' data-selectIndex="{{index}}" bindtap="selectRep">
+                  <image src='{{item.img}}' lazy-load='true'></image>
+                  <image src='{{list[index].flag? "../../images/check.png" : "../../images/check2.png"}}' class='pic-check' wx:if="{{audit}}"></image>
+                  <!-- <image src='../../images/check.png' class='pic-check' wx:if="{{audit && item.flag}}"  bindtap='noCheckFun' data-item="{{item.flag}}"></image> -->
+                </view>
+              </view>
+              <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+              </view>
+
+            </scroll-view>
+          </view>
+          <view class='fix-footer fix-footer-audit' wx:if="{{audit}}">
+            <button class='fix-footer-btn fix-footer-btn-no' bindtap='passFun' data-type='2'>审核不通过</button>
+            <button class='fix-footer-btn' bindtap='passFun' data-type='1'>审核通过</button>
+          </view>
+          <view class='fix-footer' wx:else>
+            <button class='fix-footer-btn' bindtap='checkFun'>审核</button>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class='punch_box'>
+            <view class='punch_box_count'>
+              <view class='punch_count'>
+                <view>
+                  <text class='punch-count-col1'>{{classNumber}}</text>
+                  <text class='punch-count-col2'>当日上课数</text>
+                </view>
+                <text class='punch-line'></text>
+                <view>
+                  <text class='punch-count-col1'>{{punchCard}}</text>
+                  <text class='punch-count-col2'>当日打卡数</text>
+                </view>
+              </view>
+            </view>
+            <scroll-view class="main" style="height: 1000rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+              <view class='student' wx:for='{{list}}' wx:key>
+                <view class='student_info' bindtap='navTo' data-id="{{item.unionId}}">
+                  <image src='{{item.wxHead}}' class='student_img' lazy-load='true'></image>
+                  <view class='name'>
+                    <text>{{item.wxNick}}</text>
+                    <text class='col1'>{{item.uploadTime}}</text>
+                  </view>
+                </view>
+                <view class='pic' bindtap='navTo' data-id="{{item.unionId}}">
+                  <image src='{{item.img}}' lazy-load='true'></image>
+                  <view class='pic-log bg1' wx:if="{{item.approvalStatus == 1}}">通过</view>
+                  <view class='pic-log bg2' wx:elif="{{item.approvalStatus == 2}}">不通过</view>
+                </view>
+              </view>
+              <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+              </view>
+            </scroll-view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class='punch_box'>
+            <view class='punch_box_count'>
+              <view class='punch_count'>
+                <view class='selected-box-icon flex'>
+                  <image src='{{onClassFlag1 ? selectPicUrl : noselectPicUrl}}' bindtap='selectedFun2'></image>
+                  <text class='punch-count-col1 punch-count-txt'>已上课</text>
+                </view>
+                <text class='punch-line'></text>
+                <view class='selected-box-icon flex'>
+                  <image src='{{onClassFlag2 ? selectPicUrl : noselectPicUrl}}' bindtap='selectedFun3'></image>
+                  <text class='punch-count-col1 punch-count-txt'>未打卡</text>
+                </view>
+              </view>
+            </view>
+            <view class='punch-interval'>
+              <view class='punch-interval-txt'>选择学员上传打卡截图时间</view>
+              <view class="section">
+                <picker mode="date" value="{{date}}" bindchange="bindDateChange" class='picker-date'>
+                  <view class="picker">
+                    {{date}}
+                  </view>
+                </picker>
+              </view>
+            </view>
+            <view class='punch-interval-head'>
+              <view>头像</view>
+              <view>昵称</view>
+              <view>打卡状态</view>
+            </view>
+            <scroll-view class="main" style="height: 800rpx" scroll-y="true" bindscrolltolower="loadMore" lower-threshold='20'>
+
+              <view class='punch-interval-head punch-interval-main' wx:for='{{list}}' wx:key>
+                <view>
+                  <image src='{{item.entity.photo ? item.entity.photo : "https://i.s.babyfs.cn/op/149/aeba28d66851403db447e37fb0749df8.jpg"}}' class='photo' lazy-load='true'></image>
+                </view>
+                <view class='over'>{{item.entity.wechatName}}</view>
+                <view wx:if="{{item.entity.stat == -1}}">未打卡</view>
+                <view wx:elif="{{item.entity.stat == 0}}">待审核</view>
+                <view wx:elif="{{item.entity.stat == 1}}">通过</view>
+                <view wx:elif="{{item.entity.stat == 2}}">未通过</view>
+              </view>
+
+              <view class="bottom" hidden="{{hideBottom}}">
+                <view>{{loadMoreData}}</view>
+                <view>{{refreshTime}}</view>
+              </view>
+            </scroll-view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>

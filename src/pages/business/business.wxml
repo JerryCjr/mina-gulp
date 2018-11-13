@@ -1,0 +1,98 @@
+<!--pages/business/business.wxml-->
+<view class='business'>
+
+    <view class='group-box' wx:if='{{promoter.leaderType && promoter.leaderType === 1}}'>
+        <view class='group' bindtap='groupTo'>
+            <image src='https://i.s.babyfs.cn/op/149/f8180bd125044dfa8e0129f2c3841162.png'></image>
+            <text>小组成员（{{groupNum}}人）</text>
+        </view>
+    </view>
+     <view class='group-box' wx:if='{{promoter.leaderType && promoter.leaderType === 2}}'>
+        <view class='group' bindtap='groupTo1'>
+            <image src='https://i.s.babyfs.cn/op/149/fc1f2a78876245a5ba60c5ff7d315928.png'></image>
+            <text>小队成员（{{groupNum}}人）</text>
+        </view>
+    </view> 
+    <view class='{{flag || flag1? "issue pad" : "issue pad h"}}'>
+        <text>第{{dateRangeNumber}}期</text>
+        <view class='{{flag ? "pull-down h142" : "bor pull-down"}}' bindtap='showFun'>
+            <text class='def'>{{types}}</text>
+            <image src='https://i.s.babyfs.cn/op/149/04a5525d75864859a77e515784ad4a0e.png' class='icon'></image>
+            <view class='{{flag ? "recruit bg" : "recruit hide"}}' bindtap='typeFun' data-type="0">招生</view>
+            <view class='{{flag ? "sale bg" : "sale hide"}}' bindtap='typeFun' data-type="1">销售</view>
+        </view>
+        <view class='{{flag1 ? "pull-down mr h142" : "bor pull-down mr"}}' bindtap='showFun1' wx:if='{{promoter.leaderType === 2}}'>
+            <text class='def'>{{types1}}</text>
+            <image src='https://i.s.babyfs.cn/op/149/04a5525d75864859a77e515784ad4a0e.png' class='icon'></image>
+            <view class='{{flag1 ? "recruit bg" : "recruit hide"}}' bindtap='typeFun1' data-type="0">个人</view>
+            <view class='{{flag1 ? "sale bg" : "sale hide"}}' bindtap='typeFun1' data-type="1">小队</view>
+        </view>
+    </view>
+    <view class='recruit-sum h pad'>
+        <view class='recruit-txt'>
+            <image src='https://i.s.babyfs.cn/op/149/85da4da0cba049e3b78e74f7e43b56c6.png'></image>
+            <text>{{types}}总目标</text>
+        </view>
+        <view class='sum'>{{totalTarget}}</view>
+    </view>
+    <view class='recruit-status h'>{{types}}状态监控</view>
+    <view class='table'>
+        <view class='table-head-t h' wx:if='{{teamFlag}}'>
+            <text wx:for='{{tableArr}}' wx:key>{{item}}</text>
+        </view>
+        <view class='table-head h' wx:else>
+            <text wx:for='{{tableArr}}' wx:key>{{item}}</text>
+        </view>
+        <view class='table-main' wx:if='{{promoter.leaderType === 1}}'>
+            <view wx:for='{{nodeList}}' wx:key class='item-list h' hidden='{{types === "销售"}}'>
+                <text>{{item.time}}</text>
+                <text>{{item.target}}</text>
+                <text class='col' bindtap='navTo'>{{item.complete}}</text>
+                <text class='col'>{{item.probability ? item.probability : 0 + '%'}}</text>
+                <text class='col'>{{item.complete >= 0 ? item.target-item.complete : 0 }}</text>
+            </view>
+            <view wx:for='{{nodeList}}' wx:key class='item-list-t h' hidden='{{types === "招生"}}'>
+                 <text>{{item.time}}</text>
+                <text>{{item.target}}</text>
+                <text class='col' bindtap='navTo' data-times='{{item.times}}'>{{item.complete}}</text>
+                <text class='col'>{{item.probability ? item.probability : 0 + '%'}}</text>
+                <text>{{item.probability ? item.probability : 0 + '%'}}</text>
+                <text>{{item.probability ? item.probability : 0 + '%'}}</text>
+                <text class='col'>{{item.complete >= 0 ? item.target-item.complete : 0 }}</text> 
+            </view>
+            
+        </view>
+        <view class='table-main' wx:elif='{{promoter.leaderType === 2}}'>
+            <view wx:for='{{nodeList}}' wx:key class='item-list h'>
+                <text>{{item.time}}</text>
+                <text>{{item.target}}</text>
+                <text class='col u' bindtap='submitFun' data-remain='{{item.complete}}' data-time='{{item.time}}' data-node='{{item.dateNodeId}}' data-times='{{item.times}}' wx:if='{{types === "招生" && types1 === "个人"}}'>{{item.complete}}</text>
+                <text class='col' wx:elif='{{types1 === "小队"}}' bindtap='navTo' data-times='{{item.times}}'>{{item.complete}}</text>
+                <text class='col'  wx:elif='{{types === "销售" && types1 === "个人"}}'>{{item.complete}}</text>
+                <text class='col'  wx:else bindtap='navTo'>{{item.complete}}</text>
+                <text class='col'>{{item.probability ? item.probability : 0 + '%'}}</text>
+                <text class='col'>{{item.complete >= 0 ? item.target-item.complete : 0 }}</text>
+                <modal hidden='{{hiddenmodalput}}' title='提交您{{item.time}}的实际招生数' confirm-text='保存' cancel-text='取消' bindcancel='cancel' bindconfirm='confirm'>  
+                    <input type='text' placeholder='请输入招生数' auto-focus bindinput='checkRecruit'/>
+                </modal>
+            </view>
+        </view>
+        <view class='table-main' wx:else>
+            <view wx:for='{{nodeList}}' wx:key class='item-list h'>
+                <text>{{item.time}}</text>
+                <text>{{item.target}}</text>
+                <text class='col u' bindtap='submitFun' data-remain='{{item.complete}}' data-time='{{item.time}}' data-node='{{item.dateNodeId}}' data-times='{{item.times}}' wx:if='{{types === "招生"}}'>{{item.complete}}</text>
+                <text class='col'  wx:else>{{item.complete}}</text>
+                <text class='col'>{{item.probability ? item.probability : 0 + '%'}}</text>
+                <text class='col'>{{item.complete >= 0 ? item.target-item.complete : 0 }}</text>
+                
+            </view>
+            <modal hidden='{{hiddenmodalput}}' title='提交您{{submiTime}}的实际招生数' confirm-text='保存' cancel-text='取消' bindcancel='cancel' bindconfirm='confirm'>  
+                    <input type='text' placeholder='请输入招生数' auto-focus bindinput='checkRecruit'/>
+            </modal>
+            <modal class='modalremind' hidden='{{hiddenremind}}' title='请您于今日提交本节点招生数，超过24点将无法提交。' confirm-text='确定' cancel-text='取消' bindcancel='cancelRemind' bindconfirm='cancelRemind'>  
+            </modal>
+        </view>
+    </view>
+     
+</view>

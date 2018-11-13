@@ -1,0 +1,35 @@
+/* pages/pro_explain/recruit_explain.wxss */
+.box {
+    /* position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 40rpx;
+    right: 40rpx;
+    overflow-y: scroll; */
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #808080;
+    letter-spacing: 0;
+    line-height: 38rpx;
+    padding: 0 40rpx;
+}
+
+.box view{
+    margin-bottom: 20rpx;
+}
+
+.title {
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    margin-top: 25rpx;
+    margin-bottom: 25rpx;
+}
+
+.headline {
+    color: #333333;
+    font-size: 32rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}

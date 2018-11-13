@@ -1,0 +1,35 @@
+<view class='box'>
+    <view class="section section_gap">
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+            <view class="scroll-view-item_H {{postersType==0?'border':''}}" data-type='0' bindtap="clickType">
+                入门课招生图
+            </view>
+            <view class="scroll-view-item_H {{postersType==1?'border':''}}" data-type='1' bindtap="clickType">
+                入门课打卡图
+            </view>
+            <view class="scroll-view-item_H {{postersType==2?'border':''}}" data-type='2' bindtap="clickType">
+                入门课销售图
+            </view>
+            <view class="scroll-view-item_H {{postersType==3?'border':''}}" data-type='3' bindtap="clickType">
+                绑定海报
+            </view>
+            <view class="scroll-view-item_H {{postersType==4?'border':''}}" data-type='4' bindtap="clickType">
+                育儿日签
+            </view>
+            <view class="scroll-view-item_H {{postersType==6?'border':''}}" data-type='6' bindtap="clickType">
+                奖状
+            </view>
+            <view class="scroll-view-item_H {{postersType==5?'border':''}}" data-type='5' bindtap="clickType">
+                其他
+            </view>
+        </scroll-view>
+    </view>
+    <scroll-view class="scroll-view_H" scroll-y="true" style="width: 100%;">
+        <scroll-view scroll-y style="height:1100rpx;margin-top:20rpx;">
+            <view class="scroll-view-item bc_green list" wx:for="{{items}}" wx:key>
+                <view class="individual" data-index="{{index}}" style="background-image: url({{item.img}})" bindtap="clickDetails"></view>
+                <p class='text'>{{item.name}}</p>
+            </view>
+        </scroll-view>
+    </scroll-view>
+</view>

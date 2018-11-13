@@ -1,0 +1,223 @@
+/* pages/business/groupMember.wxss */
+
+.search {
+    height: 83rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    padding: 0 40rpx;
+}
+
+.serach-input {
+    border: 1px solid #39DEB5;
+    border-radius: 100px;
+    width: 400rpx;
+    height: 78rpx;
+    padding: 0 50rpx;
+    float: left;
+}
+
+.btn-search {
+    width: 140rpx;
+    height: 78rpx;
+    color: #fff;
+    background: #27DAAE;
+    border: 1px solid #39DEB5;
+    border-radius: 100px;
+    line-height: 78rpx;
+    text-align: center;
+    float: right;
+}
+
+.btn-search::after {
+    border: none;
+}
+
+.list-header {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #333333;
+}
+
+.list-name {
+    display: inline-block;
+    width: 160rpx;
+    padding-right: 30rpx;
+}
+
+.list-station {
+    display: inline-block;
+    width: 100rpx;
+    padding-right: 30rpx;
+}
+
+.list-batch {
+    display: inline-block;
+    width: 90rpx;
+    padding-right: 20rpx;
+}
+
+.list-content {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.bottom {
+    width: 100%;
+    height: 100rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.btn-dimission {
+    position: absolute;
+    top: 16rpx;
+    right: 160rpx;
+    display: inline-block;
+    width: 126rpx;
+    height: 68rpx;
+    background: #EDFCF8;
+    border: 1px solid #39DEB5;
+    border-radius: 7rpx;
+    text-align: center;
+    line-height: 68rpx;
+    color: #39DEB5;
+}
+
+.btn-leave {
+    position: absolute;
+    top: 16rpx;
+    right: 15rpx;
+    width: 126rpx;
+    height: 68rpx;
+    background: #27DAAE;
+    border: 1px solid #39DEB5;
+    border-radius: 7rpx;
+    text-align: center;
+    line-height: 68rpx;
+    color: #fff;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 9;
+}
+
+.modal {
+    width: 500rpx;
+    position: fixed;
+    top: 250rpx;
+    left: 50%;
+    margin-left: -290rpx;
+    background: #fff;
+    border-radius: 6rpx;
+    z-index: 99;
+    padding: 40rpx;
+}
+
+.item {
+    height: 44rpx;
+    margin-bottom: 46rpx;
+}
+
+.item-h {
+    height: 130rpx;
+}
+
+.remind {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #333333;
+    letter-spacing: 0;
+    float: left;
+}
+
+.chioce {
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #666666;
+    letter-spacing: 0;
+    float: right;
+}
+
+.chioce image {
+    position: relative;
+    top: -5rpx;
+    width: 16rpx;
+    height: 9rpx;
+    margin-left: 10rpx;
+}
+
+.picker-view {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    border-top: 1px solid #999;
+    background: #fff;
+    height: 300rpx;
+}
+
+.txt {
+    background: #F6F6F6;
+    border: 1px solid #DBDBDB;
+    border-radius: 4rpx;
+    width: 328rpx;
+    height: 130rpx;
+    float: right;
+}
+
+.confirm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+}
+
+.btn-box button{
+    width: 238rpx;
+    height: 78rpx;
+    border-radius: 100rpx;
+    display: inline-block;
+    line-height: 78rpx;
+    color: #fff;
+}
+
+.btn-cancel {
+    float: left;
+    background: #DBDBDB;
+}
+
+.btn-save {
+    float: right;
+    background: #27DAAE;
+}
+
+.pad {
+    padding: 0 40rpx;
+}
+
+.m {
+    padding-top: 26rpx;
+    padding-bottom: 26rpx;
+    border-bottom: 1px solid #ECECEC;
+}

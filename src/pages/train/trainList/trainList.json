@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "推广人培训课程",
+    "usingComponents": {
+        "component-modal": "/components/componentModal/componentModal"   
+    }
+}
