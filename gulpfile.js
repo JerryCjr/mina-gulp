@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const webpack = require('webpack-stream');
 const path = require('path');
 const less = require('gulp-less');
 const rename = require('gulp-rename');
@@ -6,14 +7,17 @@ const del = require('del');
 const imagemin = require('gulp-imagemin');
 const eslint = require('gulp-eslint');
 
+// path
 const srcPath = './src/**';
 const distPath = './dist/';
+const wxnpmPath = './dist/wxnpm';
+// files
 const wxmlFiles = [`${srcPath}/*.wxml`, `!${srcPath}/_template/*.wxml`];
 const lessFiles = [`${srcPath}/*.less`, `!${srcPath}/styles/**/*.less`, `!${srcPath}/_template/*.less`];
 const imgFiles = [`${srcPath}/images/*.{png,jpg,gif,ico}`, `${srcPath}/images/**/*.{png,jpg,gif,ico}`];
 const jsonFiles = [`${srcPath}/*.json`, `!${srcPath}/_template/*.json`];
-const jsFiles = [`${srcPath}/*.js`, `!${srcPath}/_template/*.js`];
-// const npmFiles = [`${srcPath}/npm/*.js`];
+const jsFiles = [`${srcPath}/*.js`, `!${srcPath}/_template/*.js`, `!${srcPath}/wxnpm/*.js`];
+const wxnpmFiles = [`${srcPath}/wxnpm/*.js`];
 
 /* 清除dist目录 */
 gulp.task('clean', done => {
@@ -30,6 +34,20 @@ const wxml = () => {
     .pipe(gulp.dest(distPath));
 };
 gulp.task(wxml);
+
+const wxnpm = () => {
+  return gulp
+    .src(wxnpmFiles)
+    .pipe(webpack({
+      mode: 'development',
+      devtool: 'source-map',
+      output: {
+        filename: 'bundle.js'
+      }
+    }))
+    .pipe(gulp.dest(wxnpmPath));
+};
+gulp.task(wxnpm);
 
 /* 编译JS文件 */
 const js = () => {
@@ -78,7 +96,7 @@ const img = () => {
 gulp.task(img);
 
 /* build */
-gulp.task('build', gulp.series('clean', gulp.parallel('wxml', 'js', 'json', 'wxss', 'img')));
+gulp.task('build', gulp.series('clean', gulp.parallel('wxml', 'wxnpm', 'js', 'json', 'wxss', 'img')));
 
 /* watch */
 gulp.task('watch', () => {
@@ -89,6 +107,7 @@ gulp.task('watch', () => {
   gulp.watch(imgFiles, img);
   gulp.watch(jsonFiles, json);
   gulp.watch(wxmlFiles, wxml);
+  gulp.watch(wxnpmFiles, wxnpm);
 });
 
 /* dev */

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import regeneratorRuntime from '../../npm/runtime';
-import dateHelper from '../../npm/babyfs-data';
+import regeneratorRuntime from '../../utils/runtime';
+import dateHelper from '../../utils/babyfs-data';
 // 全局app实例
 const app = getApp();
 console.log(app);
