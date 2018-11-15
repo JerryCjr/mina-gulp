@@ -43,7 +43,8 @@ const wxnpm = () => {
       mode: 'development',
       devtool: 'source-map',
       output: {
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        libraryTarget: 'commonjs2'
       }
     }))
     .pipe(gulp.dest(wxnpmPath));
