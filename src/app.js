@@ -1,5 +1,5 @@
-import encode from './wxnpm/bundle.js';
-console.log(encode);
+import bundle from './wxnpm/bundle.js';
+console.log(bundle.encode);
 App({
 
   /**
