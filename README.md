@@ -47,6 +47,3 @@ mina-gulp
 - gulp auto -c mycomponent 创建名为 mycomponent 的 component 文件
 - gulp auto -s index -p mypage 复制 pages/index 中的文件创建名称为 mypage 的页面
 
-###
-
-1. NPM 现在只支持手动copy到npm/*.js中
