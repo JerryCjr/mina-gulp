@@ -35,6 +35,7 @@ const wxml = () => {
 };
 gulp.task(wxml);
 
+/* npm处理 */
 const wxnpm = () => {
   return gulp
     .src(wxnpmFiles)
