@@ -1,6 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from '../../utils/runtime';
 import dateHelper from '../../utils/babyfs-data';
+import ajax from '../../utils/babyfs-wxapp-request.js';
+import wxapi from '../../utils/babyfs-wxapp-api.js';
+
 // 全局app实例
 const app = getApp();
 console.log(app);
@@ -104,5 +107,49 @@ Page({
 
   },
 
-  customData: {}
+  customData: {},
+
+  async bindgetuserinfo(e) {
+    if (e.detail.errMsg === 'getUserInfo:ok') {
+      Object.assign(app.globalData['userInfo'], e.detail['userInfo']);
+      Object.assign(app.globalData['wx_group_key'], {
+        'encryptedData': e.detail.encryptedData,
+        'iv': e.detail.iv
+      });
+      let sessionId = wx.getStorageSync('session_id');
+      if (!sessionId) {
+        await this.getUsSession();
+      }
+      this.getUsToken();
+    } else {
+      console.log(e.detail.errMsg);
+    }
+  },
+
+  async getUsToken() {
+    let params = null;
+    let options = null;
+    params = { ...app.globalData.wx_group_key };
+    params['wx_session_id'] = wx.getStorageSync('session_id');
+    options = {
+      url: 'https://m.babyfs.cn/api/user/wxx_login',
+      data: params
+    };
+    await ajax.POST(options);
+  },
+
+  async getUsSession() {
+    let r = await wxapi.login();
+    if (r) {
+      let options = {
+        url: 'https://m.babyfs.cn/api/user/wxx_session',
+        data: {
+          wx_js_code: r.code,
+          wx_app: 'wxa_primer'
+        }
+      };
+      let res = await ajax.POST(options);
+      wx.setStorageSync('session_id', res.session_id);
+    }
+  }
 });

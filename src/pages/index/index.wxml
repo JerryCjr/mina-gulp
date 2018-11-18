@@ -1,6 +1,9 @@
 <view class="container">
   <view class="logo">
-    <image src='{{src}}' class="logo" mode="widthFix"></image>
+  <open-data type="userAvatarUrl"></open-data>
+    <!-- <image src='{{src}}' class="logo" mode="widthFix"></image> -->
   </view>
-  <text class="message active">babyfs mina gulp!</text>
+  <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">
+    <text class="message active">babyfs mina gulp!</text>
+  </button>
 </view>

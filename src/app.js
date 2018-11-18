@@ -30,7 +30,8 @@ App({
 
   },
 
-  globalData() {
-
+  globalData: {
+    'userInfo': {},
+    'wx_group_key': {}
   }
 });
